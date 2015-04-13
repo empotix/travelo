@@ -1,0 +1,43 @@
+.search_help .help_searchbox {
+	background:url("images/help-search-icon.png") no-repeat scroll 18px center #fff;
+	border: 1px solid rgba(0, 0, 0, 0.35);
+	border-radius: 4px;
+	box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset, 0 0 0 #000;
+	color: #5A5A5A; 
+	font-size: 20px;
+	padding: 17px 30px 17px 56px;
+	width: 63%;
+}
+.search_help {
+	margin-top: 16px;
+}
+.search_help .help_searchbox:focus {
+	box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset, 0 0 4px rgba(237, 29, 137, 0.8), 0 0 0 #000000;
+}
+.search_help_dropdown {
+	background: none repeat scroll 0 0 #FFFFFF;
+	border-radius: 0 0 5px 5px;
+	color: #5A5A5A;
+	display: none;
+	left: 142px;
+	position: absolute;
+	text-align: left;
+	width: 715px;
+}
+.search_help_dropdown a {
+	border-bottom: 1px solid rgb(238, 238, 238);
+	color: rgb(57, 60, 61)!important;
+	display: block;
+	padding: 10px 15px !important;
+}
+.search_help_dropdown a:hover {
+	background-color: rgb(0, 176, 255);
+	color: #FFFFFF!important;
+	font-weight: bold;
+	text-decoration: none;
+	text-shadow: 0px 1px 1px rgba(0, 0, 0, 0.2);
+}
+.search_help .help_searchbox:focus > .search_help_dropdown {
+	display: block;
+}
+

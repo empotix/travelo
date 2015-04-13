@@ -1,0 +1,232 @@
+/*
+Copyright 2010 Mike Brevoort http://mike.brevoort.com @mbrevoort
+
+v1.0 jquery-facebook-multi-friend-selector
+
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+*/
+
+#jfmfs-friend-selector input {
+margin-top: 10px;
+padding: 4px 9px;
+background:#fff;
+border:1px solid #d2d2d2;
+border-radius:.3em;
+-moz-border-radius:.3em;
+-webkit-border-radius:.3em;
+box-shadow:inset 1px 1px 1px 0 rgba(0, 0, 0, 0.1);
+-o-box-shadow:inset 1px 1px 1px 0 rgba(0, 0, 0, 0.1);
+-moz-box-shadow:inset 1px 1px 1px 0 rgba(0, 0, 0, 0.1);
+-webkit-box-shadow:inset 1px 1px 1px 0 rgba(0, 0, 0, 0.1);
+width:200px;
+ 
+}
+.jfmfs-friend {                
+    cursor:pointer;
+    display:block;
+    float:left;
+    height:52px;
+    margin:3px;
+    padding:4px;
+    width:126px;
+    border: 1px solid transparent;
+    -moz-border-radius: 5px; 
+    -webkit-border-radius: 5px;
+	-webkit-user-select:none;
+	-moz-user-select:none;
+}
+
+.jfmfs-friend img {
+    border: 1px solid #fff;
+    float:left;
+    margin:0;
+}
+
+.jfmfs-friend.selected img {
+    border: 1px solid #fff;
+}
+
+.jfmfs-friend div {
+    color:#111111;
+    font-size:11px;
+    overflow:hidden;
+    padding:2px 0 0 6px;
+    width:62px;
+    text-align:left;
+}
+
+#jfmfs-friend-container {
+    overflow:scroll;
+    overflow-x: hidden;
+    -ms-overflow-x: hidden;
+    width:938;
+    height:404px;  
+    font-family: 'lucida grande', tahoma, verdana, arial, sans-serif;
+    color: #333;
+    font-size: 12px;
+    border-right: 1px solid #CCC;
+	
+    border-left: 1px solid #CCC;
+	background:#fff;
+}
+
+#jfmfs-friend-selector {
+    height: 450px;
+    margin: 30px auto 0;
+    width: 940px;
+}
+
+#jfmfs-inner-header {
+    color:#9C936C;
+    font-size:12px;
+    font-weight:bold;
+    height:49px;
+    padding: 0px 2px;
+    width: 934px;
+    border: 1px solid #7ed3ff;
+    margin:0;
+    border-top-left-radius: 6px;
+    border-top-right-radius: 6px;
+    -moz-border-radius-topleft: 6px;
+    -moz-border-radius-topright: 6px;
+	background: url(images/post_room_bg.png) repeat-x scroll center top transparent;
+}
+
+.jfmfs-friend.selected {
+    border: 1px solid #7ed3ff;
+	background:#C6E9FE;
+}
+
+.jfmfs-friend.selected div {
+    color: #000;
+}
+
+.hover {
+    background-color: #EFF2F7;
+}
+
+.hide-non-selected, .hide-filtered {
+    display: none;
+}
+
+div.jfmfs-button {
+    background:none repeat scroll 0 0 #6D84B4;
+    border:1px solid #3B5998;
+    color:white;
+    cursor:pointer;
+    margin:4px 5px 0 4px;
+    padding:2px 5px;
+    text-decoration:none;
+}
+
+#jfmfs-friend-selector a.filter-link:link, a.filter-link:visited {
+    color: #000;
+    font-weight: bold;
+    text-decoration: none;
+	border:1px solid none;
+}
+
+#jfmfs-friend-selector a.filter-link:hover, #jfmfs-friend-selector a.selected {
+    background: url("images/refer_invite_butt.png") repeat-x scroll center top transparent;
+
+    color: #000 !important;
+	border: 1px solid #BFBEBE;
+}
+
+#jfmfs-friend-selector .filter-link {
+    margin:9px 5px 0px 5px;
+    padding:0px 10px;
+	background:#7ED3FF;
+	border:1px solid #7ED3FF;
+	line-height:25px;
+	   	-moz-border-radius: 5px;
+-webkit-border-radius:5px;
+-khtml-border-radius: 5px;
+border-radius: 5px;
+}
+
+#jfmfs-inner-header .filter-link {
+    float:right;
+}
+
+#jfmfs-inner-header div.jfmfs-button-hover {
+    text-decoration: underline;
+}
+
+
+#jfmfs-friend-filter-text {
+    float:left;
+   
+}
+
+
+#jfmfs-inner-header span.jfmfs-title {
+     color: #000;
+    float: left;
+    font-family: arial;
+    font-size: 14px;
+    margin: 15px 5px 0 7px;
+}
+
+#jfmfs-max-selected-wrapper {
+    float: right;
+	 color: #FFFFFF;
+     margin: 13px 5px 0;
+    padding:3px 5px 3px 5px;  
+}
+.clsInvite_Text .silver_box {
+ margin: 5px auto 0;
+    width: 938px;
+background: url(images/post_room_bg.png) repeat-x scroll center top transparent;
+border-bottom-left-radius: 6px;
+    border-bottom-right-radius: 6px;
+    -moz-border-radius-bottomleft: 6px;
+    -moz-border-radius-bottomright: 6px;
+	 border: 1px solid #7ed3ff;
+	 height:49px;
+	
+}
+#bottom-bar input[type="text"] {
+background:#fff;
+border:1px solid #d2d2d2;
+float:left;
+border-radius:.3em;
+-moz-border-radius:.3em;
+-webkit-border-radius:.3em;
+box-shadow:inset 1px 1px 1px 0 rgba(0, 0, 0, 0.1);
+-o-box-shadow:inset 1px 1px 1px 0 rgba(0, 0, 0, 0.1);
+-moz-box-shadow:inset 1px 1px 1px 0 rgba(0, 0, 0, 0.1);
+-webkit-box-shadow:inset 1px 1px 1px 0 rgba(0, 0, 0, 0.1);
+width:600px;
+margin: 10px 0 0 10px;
+ padding: 5px 10px;
+}
+#bottom-bar #fb-send-button {
+background: url("images/refer_invite_butt.png") repeat-x scroll center top transparent;
+border: 1px solid #BFBEBE;
+    color: #000000;
+    display: block;
+    float: left;
+    height: 28px;
+    line-height: 28px;
+    margin: 8px 0 0 10px;
+    padding: 0 10px;
+	-moz-border-radius: 5px;
+-webkit-border-radius:5px;
+-khtml-border-radius: 5px;
+border-radius: 5px;
+}
+#bottom-bar #fb-send-button:hover {
+text-decoration:none;
+
+}

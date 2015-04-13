@@ -1,0 +1,1 @@
+<p> <?php echo translate("Page will be coming soon."); ?> </p>

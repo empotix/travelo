@@ -1,0 +1,132 @@
+.clsInivte_Frd_Bg {
+background:url(images/invite_frd_Bg.png) no-repeat 0 0;
+width:958px;
+height:378px;
+margin:0 auto;
+}
+#View_Referrals h2 {
+color: #323232;
+font-size: 35px;
+font-weight: normal;
+margin: 15px 0;
+text-align: center;
+}
+.clsTCredit_Price {
+height:257px;
+position:relative;
+}
+.clsTCredit_Price p {
+position:absolute;
+width:135px;
+height: 73px;
+overflow:hidden;
+font-size: 65px;
+font-weight:bold;
+right: 189px;
+top: 85px;
+color:#49befa;
+}
+#Referral_Offer {
+height:57px;
+line-height:57px;
+text-align:center;
+overflow:hidden;
+font-size:23px;
+}
+#Referral_Offer span {
+color:#40aeec;
+}
+#action_bar_container .Refer_Fb_Bg {
+background:url(images/sign_fb_butt.png) no-repeat center top;
+display:block;
+height: 46px;
+width: 247px;
+text-indent: -2000px;
+margin: 0 20px;
+}
+#action_bar_container .Refer_Fb_Bg:hover {
+background:url(images/sign_fb_butt_over.png) no-repeat center top;
+}
+#action_bar_container .Refer_Email {
+background:url(images/email_bg.png) no-repeat 0 0;
+width:177px;
+display:block;
+text-indent: -2000px;
+margin: 0 20px;
+height:45px;
+}
+#action_bar_container .Refer_Email:hover {
+background:url(images/email_bg.png) no-repeat center bottom;
+}
+#action_bar_container {
+display:block;
+height: 55px;
+margin-top: 10px;
+text-align:center;
+}
+#action_bar_container #sm_arrow {
+background:url(images/reffer_arrow.png) no-repeat 0 0;
+width:40px;
+height:17px;
+margin: 12px 0 0 20px;
+}
+#action_bar_container #action_bar {
+font-size:20px;
+height:45px;
+display:inline-block;
+text-align:center;
+line-height:40px;
+}
+#View_Tell_Friend .clsTrip_bg {
+background:url(images/take_trip_bg.png) no-repeat left top;
+min-height:407px;
+width:880px;
+margin:40px auto 10px;
+}
+#View_Tell_Friend #Take_Trip_wrapper {
+background:#fff url(images/take_trip_wrapper.png) repeat-x center top;
+box-shadow:inset 0 0 .2em rgba(255, 255, 255, 0.3), inset 0 0 .2em rgba(255, 255, 255, 0.3), 0 2px 3px rgba(0, 0, 0, 0.2);
+-o-box-shadow:inset 0 0 .2em rgba(255, 255, 255, 0.3), inset 0 0 .2em rgba(255, 255, 255, 0.3), 0 2px 3px rgba(0, 0, 0, 0.2);
+-moz-box-shadow:inset 0 0 .2em rgba(255, 255, 255, 0.3), inset 0 0 .2em rgba(255, 255, 255, 0.3), 0 2px 3px rgba(0, 0, 0, 0.2);
+-webkit-box-shadow:inset 0 0 .2em rgba(255, 255, 255, 0.3), inset 0 0 .2em rgba(255, 255, 255, 0.3), 0 2px 3px rgba(0, 0, 0, 0.2);
+-moz-border-radius: 5px;
+-webkit-border-radius:5px;
+-khtml-border-radius: 5px;
+border-radius: 5px;
+border:1px solid #eeeeee;
+width:395px;
+padding:10px 10px 0 10px;
+margin: 110px 0 0;
+float:right;
+}
+#View_Tell_Friend #Take_Trip_wrapper h1 {
+color:#078ad1;
+text-transform:uppercase;
+font-size:20px;
+margin:0 0 5px 0;
+}
+#View_Tell_Friend #Take_Trip_wrapper h2 {
+font-size:16px;
+margin:0 0 10px 0;
+}
+#View_Tell_Friend #Take_Trip_wrapper p {
+padding:0 0 10px 0;
+}
+#View_Reffer_Mail .ref_email {
+margin:0 10px 10px 0;
+float:left;
+}
+#View_Reffer_Mail #emails_wrapper {
+width:470px;
+}
+#View_Reffer_Mail p {
+padding:0 0 10px 0;
+}
+.back_button p {
+padding:0 0 10px 0;
+text-align:center;
+}
+
+#refer_emails_form > div {
+    clear: both;
+}

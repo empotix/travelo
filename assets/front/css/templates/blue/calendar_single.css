@@ -1,0 +1,153 @@
+/* global colors */
+/* global colors */
+#calendar2 .calendar-header {
+  width: 100%;
+  text-align: center;
+  margin-bottom: 20px;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 10px; }
+  #calendar2 .calendar-header .prev-month {
+    float: left; }
+  #calendar2 .calendar-header .display-month {
+    font-weight: bold;
+    font-size: 2.0em; }
+  #calendar2 .calendar-header .next-month {
+    float: right; }
+#calendar2 .day_header {
+  float: left;
+  width: 96px;
+  text-align: center;
+  font-weight: bold;
+  color: #333; }
+#calendar2 .tile, #calendar2 .tile_selected {
+  float: left;
+  width: 96px;
+  cursor: pointer; }
+  #calendar2 .tile .tile_container, #calendar2 .tile_selected .tile_container {
+    background-color: #d5d5d5;
+    margin: 0 3px -3px 0;
+    height: 70px;
+    box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.3); }
+#calendar2 .tile_selected .tile_container {
+  background: #118DCF; }
+  #calendar2 .tile_selected .tile_container .day {
+  color:#fff;
+ }
+#calendar2 .tile.selected .tile_container {
+  background-color: #e1e2d9; }
+#calendar2 .tile.disabled {
+  cursor: default; }
+  #calendar2 .tile.disabled .tile_container {
+    background-color: #ededed;
+    box-shadow: inset 0 0 2px rgba(0, 0, 0, 0.1); }
+#calendar2 .line_eow, #calendar2 .line_reg {
+  width: 96px;
+  height: 26px;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+/*  margin-top: 10px;*/ }
+  #calendar2 .line_eow span, #calendar2 .line_reg span {
+    line-height: 27px;
+    height: 24px;
+    float: left;
+    display: block; }
+    #calendar2 .line_eow span.startcap, #calendar2 .line_reg span.startcap {
+      width: 48px; }
+    #calendar2 .line_eow span.content, #calendar2 .line_reg span.content {
+      margin-left: -25px;
+      margin-right: 24px;
+      position: relative;
+      width: 1px;
+      z-index: 20;
+      overflow: visible; }
+    #calendar2 .line_eow span.endcap, #calendar2 .line_reg span.endcap {
+      width: 45px; }
+    #calendar2 .line_eow span.startcap:after, #calendar2 .line_eow span.endcap:after, #calendar2 .line_reg span.startcap:after, #calendar2 .line_reg span.endcap:after {
+      content: ' ';
+      display: block;
+      position: absolute;
+      top: 50%;
+      width: 100%;
+      background: black; }
+  #calendar2 .line_eow.bs span.startcap, #calendar2 .line_eow.bs span.endcap, #calendar2 .line_eow.tp span.startcap, #calendar2 .line_eow.tp span.endcap, #calendar2 .line_eow.rs span.startcap, #calendar2 .line_eow.rs span.endcap, #calendar2 .line_reg.bs span.startcap, #calendar2 .line_reg.bs span.endcap, #calendar2 .line_reg.tp span.startcap, #calendar2 .line_reg.tp span.endcap, #calendar2 .line_reg.rs span.startcap, #calendar2 .line_reg.rs span.endcap {
+    background: gray;
+    background: -webkit-gradient(linear, center top, center bottom, from(#cccccc), to(gray));
+    background: -moz-linear-gradient(top, #cccccc, gray);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffcccccc', endColorstr='#ff808080', GradientType=0);
+    border-top: 1px solid #d5d5d5;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.4); }
+  #calendar2 .line_eow.bs span.content, #calendar2 .line_eow.tp span.content, #calendar2 .line_eow.rs span.content, #calendar2 .line_reg.bs span.content, #calendar2 .line_reg.tp span.content, #calendar2 .line_reg.rs span.content {
+    color: white !important;
+    text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.3); }
+  #calendar2 .line_eow.rs span.startcap, #calendar2 .line_eow.rs span.endcap, #calendar2 .line_reg.rs span.startcap, #calendar2 .line_reg.rs span.endcap {
+    background: #b90864;
+    background: -webkit-gradient(linear, center top, center bottom, from(#f62792), to(#b90864));
+    background: -moz-linear-gradient(top, #f62792, #b90864);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#fff62792', endColorstr='#ffb90864', GradientType=0);
+    border-top: 1px solid #af055d;
+    border-bottom: 1px solid #800243; }
+  #calendar2 .line_eow.rs span.content, #calendar2 .line_reg.rs span.content {
+    color: #fff !important;
+    text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.3); }
+  #calendar2 .line_eow.av span.content, #calendar2 .line_reg.av span.content {
+    color: #999 !important;
+    text-shadow: 0 1px 0 white; }
+  #calendar2 .line_eow.left span.startcap, #calendar2 .line_eow.single span.startcap, #calendar2 .line_eow.line_reg.single span.startcap, #calendar2 .line_reg.left span.startcap, #calendar2 .line_reg.line_eow.single span.startcap, #calendar2 .line_reg.single span.startcap {
+    width: 38px;
+    margin-left: 10px;
+    border-top-left-radius: 15px;
+    -moz-border-radius-topleft: 15px;
+    -webkit-border-top-left-radius: 15px;
+    border-bottom-left-radius: 15px;
+    -moz-border-radius-bottomleft: 15px;
+    -webkit-border-bottom-left-radius: 15px; }
+  #calendar2 .line_eow.right span.endcap, #calendar2 .line_eow.single span.endcap, #calendar2 .line_eow.line_reg.single span.endcap, #calendar2 .line_reg.right span.endcap, #calendar2 .line_reg.line_eow.single span.endcap, #calendar2 .line_reg.single span.endcap {
+    width: 35px;
+    margin-right: 13px;
+    border-top-right-radius: 15px;
+    -moz-border-radius-topright: 15px;
+    -webkit-border-top-right-radius: 15px;
+    border-bottom-right-radius: 15px;
+    -moz-border-radius-bottomright: 15px;
+    -webkit-border-bottom-right-radius: 15px; }
+#calendar2 .line_reg {
+  position: relative; }
+  #calendar2 .line_reg span.endcap {
+    width: 48px;
+    float: left; }
+
+/****** Single Calendar ******/
+#calendar2 #backdrop {
+  /*padding: 15px; 
+   margin: 0 -5px 0 0;*/
+  width: 672px;
+  margin:0 auto;
+   padding: 0 0 15px;
+ }
+
+#calendar2 .day {
+  margin: 5px;
+  font-size: 14px;
+  color: #333; }
+
+#calendar2 .price {
+  padding: 4px 0px 4px 20px;
+  font-size: 14px;
+  font-weight: bold; }
+
+/** other styling **/
+#open_help_video_link {
+  background: lightGoldenrodYellow;
+  display: block;
+  float: left;
+  padding: 5px 10px;
+  margin-bottom: 10px;
+  font-weight: bold; }
+
+#calendar2 .privacy {
+  padding: 5px 10px;
+  margin-top: 15px;
+  background: #fafafa;
+  font-weight: bold; }
+
+
