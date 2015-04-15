@@ -5190,6 +5190,7 @@ sup {
     line-height: 1.2;
     padding: 3px 3px 0px 3px;
     display: inline-block;
+    height: 45px;
 }
 .position-left {
     float:left

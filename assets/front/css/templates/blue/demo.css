@@ -232,10 +232,9 @@ tse.rslides {
     white-space: nowrap;
 }
 .check_wrap {
-    width: 65px;
     margin-top: 5px;
     padding-right: 14px;
-    font-weight: normal!important;
+    font-weight: normal !important;
 }
 #advanced_search .filter_header:hover {
     text-decoration: none;
@@ -253,11 +252,10 @@ tse.rslides {
     width: 100%;
 }
 .search_filter_content .clearfix.checkbox .checkbox_filter {
-    float: left;
+    margin-left: 0;
     cursor: pointer;
 }
 .clearfix.checkbox .checkbox_list {
-    float: left;
     margin-left: 5px;
 }
 .find-btn {
@@ -292,8 +290,6 @@ tse.rslides {
     vertical-align:middle;
     text-transform:uppercase;
     cursor:pointer;
-    width: 128px;
-    height: 30px;
 }
 .search_icon_checkinout {
     margin-top: -4px;

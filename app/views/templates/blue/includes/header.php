@@ -651,8 +651,7 @@
                                                         </ul>
                                                         <div style="clear:both"></div>
                                                         <button id="submit_location" class="find-btn" type="submit" value="Search" name="Submit" >
-                                                            <i class="icon icon-search"></i>
-                                                            <img src="<?php echo base_url(); ?>/css/templates/blue/images/search_icon1.png" />
+                                                            <i class="glyphicon glyphicon-search"></i>
                                                             <?php echo translate("Find A Place"); ?>
                                                         </button>
                                                         <label class='find-btn-close' id="close_search">
