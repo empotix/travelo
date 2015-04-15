@@ -84,18 +84,18 @@
                     <link rel="stylesheet" href="<?php echo css_url(); ?>/responsiveslides.css"/>
                     <link rel="stylesheet" href="<?php echo css_url(); ?>/demo.css"/>
 
-<?php $this->load->view(THEME_FOLDER . '/includes/map'); ?>
+                    <?php $this->load->view(THEME_FOLDER . '/includes/map'); ?>
                     <script>var NREUMQ = [];
-                NREUMQ.push(["mark", "firstbyte", new Date().getTime()]);
-                (function () {
-                    var d = document;
-                    var e = d.createElement("script");
-                    e.type = "text/javascript";
-                    e.async = true;
-                    e.src = "<?php echo js_url(); ?>/rum.js";
-                    var s = d.getElementsByTagName("script")[0];
-                    s.parentNode.insertBefore(e, s);
-                })()</script>
+                        NREUMQ.push(["mark", "firstbyte", new Date().getTime()]);
+                        (function () {
+                            var d = document;
+                            var e = d.createElement("script");
+                            e.type = "text/javascript";
+                            e.async = true;
+                            e.src = "<?php echo js_url(); ?>/rum.js";
+                            var s = d.getElementsByTagName("script")[0];
+                            s.parentNode.insertBefore(e, s);
+                        })()</script>
                     <script type="text/javascript">
                         var base_url = '<?php echo base_url(); ?>';
                         var default_value = '<?php echo translate("Where are you going?"); ?>';
@@ -126,10 +126,10 @@
                             <script src="<?php echo js_url(); ?>/home_new.js" type="text/javascript"></script>
                             <script src="<?php echo js_url(); ?>/page1.js" type="text/javascript"></script>
                             <script src="<?php echo js_url(); ?>/page1_new.js" type="text/javascript"></script>
-        <?php
-        if ($this->uri->segment(1) != 'rooms' && $this->uri->segment(1) != 'calendar')
-        {
-            ?>
+                            <?php
+                            if ($this->uri->segment(1) != 'rooms' && $this->uri->segment(1) != 'calendar')
+                            {
+                                ?>
                                 <!-- Slider Kit scripts -->
                                 <script type="text/javascript" src="<?php echo js_url(); ?>/jquery.easing.1.3.min.js"></script>
                                 <script type="text/javascript" src="<?php echo js_url(); ?>/jquery.sliderkit.1.8.min.js"></script>
@@ -137,10 +137,10 @@
                                 <script type="text/javascript" src="<?php echo js_url(); ?>/jquery.leanModal.min.js"></script>
                                 <script type="text/javascript" src="<?php echo base_url(); ?>/js/responsiveslides.min.js"></script>
                                 <!--<script type="text/javascript" src="jquery.js"></script>-->
-            <?php
-        }
-    }
-?>
+                                <?php
+                            }
+                        }
+                    ?>
                     </head>
                     <body>
                         <div id="fb-root"></div>
@@ -397,16 +397,16 @@
             {
                 ?>
                                                     jQuery("#advanced_search_rooms").fadeOut();
-                                    <?php } ?>
+            <?php } ?>
 
                                             });
                                         });
                                     </script>
-            <?php
-        }
+                                    <?php
+                                }
 //}
-    }
-?>
+                            }
+                        ?>
 
                         <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false&libraries=places"></script>
 
@@ -554,11 +554,11 @@
                         <title><?php echo $title ?></title>
 
 <!--<style>
-<?php
-    $sPath = $mainpath . '/css/templates/blue/common.css';
-    $sOutFile = $sPath . '.gz';
-    echo gzip($sPath, $sOutFile);
-?>
+                        <?php
+                            $sPath = $mainpath . '/css/templates/blue/common.css';
+                            $sOutFile = $sPath . '.gz';
+                            echo gzip($sPath, $sOutFile);
+                        ?>
 </style>-->
 
 
@@ -567,31 +567,31 @@
                             <div class="headerleft">
                                 <div class="logo">
                                     <a href="<?php echo base_url(); ?>"> <img title="<?php echo $this->dx_auth->get_site_title(); ?>"  src="<?php echo base_url() . 'logo/' . $logo; ?>"> </a> </div>
-                                    <?php
-                                        if ($this->uri->segment(1) == 'search' || $this->uri->segment(2) == 'new' || $this->uri->segment(2) == 'lys_next')
+                                <?php
+                                    if ($this->uri->segment(1) == 'search' || $this->uri->segment(2) == 'new' || $this->uri->segment(2) == 'lys_next')
+                                    {
+                                        ?>
+                                        <div class="search" style="display: none">
+                                            <?php
+                                        }
+                                        else
                                         {
                                             ?>
-                                        <div class="search" style="display: none">
-                                                <?php
-                                            }
-                                            else
-                                            {
-                                                ?>
                                             <div class="search">
-                                                       <?php } ?>
+                                            <?php } ?>
                                         <form id="search_form1" action="<?php echo site_url('search'); ?>" method ="post" class="searchform_head">
                                             <input type="text" id="searchTextField" name="searchbox" class="searchbox" value="<?php echo translate("Where are you going?"); ?>" onblur="if (this.value == '') {
-                                                                this.value = '<?php echo translate("Where are you going?"); ?>';
-                                                            }"
+                                                        this.value = '<?php echo translate("Where are you going?"); ?>';
+                                                    }"
                                                    onfocus="if (this.value == '<?php echo translate("Where are you going?"); ?>') {
-                                                                       this.value = '';
-                                                                   }" onKeyPress="return disableEnterKey(event)" placeholder="<?php echo translate("Where are you going?"); ?>"/>
+                                                               this.value = '';
+                                                           }" onKeyPress="return disableEnterKey(event)" placeholder="<?php echo translate("Where are you going?"); ?>"/>
                                             <div id="map-canvas"></div>
-<?php
-    if ($this->uri->segment(1) == '0')
-    {
-        $img_path = base_url() . 'images/close_red.png';
-        ?>
+                                            <?php
+                                                if ($this->uri->segment(1) == '0')
+                                                {
+                                                    $img_path = base_url() . 'images/close_red.png';
+                                                    ?>
                                                     <div class='advanced_search' id="advanced_search" style='display: none; position: absolute;
                                                          z-index: 2147483647; background:#FCFCFC; border: 1px solid #CCCCCC; padding: 10px; opacity: 1;width: 260px;top:39px;'>     
                                                         <label class="checkin_search">
@@ -601,7 +601,7 @@
                                                             </div>
                                                         </label>
                                                         <label class="checkout-detail_search">
-        <?php echo translate('Check out'); ?>
+                                                            <?php echo translate('Check out'); ?>
                                                             <div id="checkoutWrapper" class="input-wrapper">
                                                                 <input id="checkoutdate2" class="check_wrap checkout search-option ui-datepicker-target" type="text" placeholder="Check out" name="checkout" autocomplete="off" readonly>
                                                             </div>
@@ -609,7 +609,7 @@
                                                         <label class="guest-detail_search">
                                                             <div class="guests_section">
                                                                 <div class="heading">
-        <?php echo translate("Guests"); ?>
+                                                                    <?php echo translate("Guests"); ?>
                                                                 </div>
                                                                 <select id="number_of_guests" name="number_of_guests" placeholder="Guests" class="guest-detail-section" style="margin-top: 5px;padding: 4px;">
                                                                     <option placeholder="1">1</option>
@@ -653,17 +653,17 @@
                                                         <button id="submit_location" class="find-btn" type="submit" value="Search" name="Submit" >
                                                             <i class="icon icon-search"></i>
                                                             <img src="<?php echo base_url(); ?>/css/templates/blue/images/search_icon1.png" />
-                                                    <?php echo translate("Find A Place"); ?>
+                                                            <?php echo translate("Find A Place"); ?>
                                                         </button>
                                                         <label class='find-btn-close' id="close_search">
-                                                    <?php echo translate("Close"); ?>
+                                                            <?php echo translate("Close"); ?>
                                                         </label>
                                                     </div>
-        <?php
-    }
-    else
-    {
-        ?>
+                                                    <?php
+                                                }
+                                                else
+                                                {
+                                                    ?>
                                                     <div class='advanced_search_rooms' id='advanced_search_rooms' style='display: none; position: absolute;
                                                          background:#FCFCFC; border: 1px solid #CCCCCC; padding: 10px; opacity: 1; width: 260px; top:39px; z-index: 2147483647; '>
                                                         <label class="checkin_search" style="margin-right:5px">
@@ -681,18 +681,18 @@
                                                             </div>
                                                         </label>
                                                         <label class="guest-detail_search" for="number_of_guests">
-                                                                    <?php echo translate("Guests"); ?><br />
+                                                            <?php echo translate("Guests"); ?><br />
                                                             <select id="number_of_guest" name="number_of_guests" class="guest-detail-section" style="margin-top: 5px;padding: 4px;">
-                                                                    <?php
+                                                                <?php
                                                                 for ($i = 1; $i <= 16; $i++)
                                                                 {
                                                                     ?>
                                                                     <option placeholder="<?php echo $i; ?>"><?php
-                                                                    echo $i;
-                                                                    if ($i == 16)
-                                                                        echo '+';
-                                                                    ?> </option>
-        <?php } ?>
+                                                                        echo $i;
+                                                                        if ($i == 16)
+                                                                            echo '+';
+                                                                        ?> </option>
+                                                                <?php } ?>
                                                             </select>
                                                         </label>
                                                         <div style="clear:both"></div>
@@ -717,13 +717,13 @@
                                                         <button id="submit_location" class="find-btn blue" type="submit" value="Search" name="Submit" >
                                                             <i class="icon icon-search"></i>
                                                             <img class="search_icon_checkinout" src="<?php echo base_url(); ?>/css/templates/blue/images/search_icon1.png" />
-        <?php echo translate("Find A Place"); ?>
+                                                            <?php echo translate("Find A Place"); ?>
                                                         </button>
                                                         <label class='find-btn-close blue' id="close_search1">
-        <?php echo translate("Close"); ?>
+                                                            <?php echo translate("Close"); ?>
                                                         </label>
                                                     </div>
-    <?php } ?>
+                                                <?php } ?>
                                         </form>
                                     </div>
                                 </div>
@@ -763,12 +763,12 @@
                                                     $src = $this->Gallery->profilepic($this->dx_auth->get_user_id(), 2);
                                                 }
                                                 ?>
-                                                        <?php
-                                                        if ($this->dx_auth->is_logged_in())
-                                                        {
-                                                            $via_login = $this->db->where('id', $this->dx_auth->get_user_id())->get('users')->row()->via_login;
-                                                        }
-                                                        ?>
+                                                <?php
+                                                if ($this->dx_auth->is_logged_in())
+                                                {
+                                                    $via_login = $this->db->where('id', $this->dx_auth->get_user_id())->get('users')->row()->via_login;
+                                                }
+                                                ?>
                                                 <li class="help"><a href="#"><?php
                                                         echo /* translate("Hello"). */'&nbsp&nbsp' . "<img src='" . $src . "'width='30' height='30'/>"
                                                         . '&nbsp&nbsp' . $name;
@@ -788,13 +788,13 @@
                                                         {
                                                             ?>
                                                             <li><?php echo anchor('users/logout', translate("Logout")); ?></li>
-            <?php
-        }
-        else
-        {
-            ?>
+                                                            <?php
+                                                        }
+                                                        else
+                                                        {
+                                                            ?>
                                                             <li><a id="logout" onclick="logout();"><?php echo translate("Logout"); ?></a></li>
-                                        <?php } ?>
+                                                        <?php } ?>
                                                     </ul>
 
                                                 </li>
@@ -818,12 +818,12 @@
                                             $src = $this->Gallery->profilepic($this->dx_auth->get_user_id(), 2);
                                         }
                                         ?>
-                                                <?php
-                                                if ($this->dx_auth->is_logged_in())
-                                                {
-                                                    $via_login = $this->db->where('id', $this->dx_auth->get_user_id())->get('users')->row()->via_login;
-                                                }
-                                                ?>
+                                        <?php
+                                        if ($this->dx_auth->is_logged_in())
+                                        {
+                                            $via_login = $this->db->where('id', $this->dx_auth->get_user_id())->get('users')->row()->via_login;
+                                        }
+                                        ?>
                                         <li class="help"><span><?php
                                                 echo '&nbsp&nbsp' .
                                                 "<img src='" . $src . "'width='30' height='30'/>"
@@ -844,23 +844,23 @@
                                                 {
                                                     ?>
                                                     <li><?php echo anchor('users/logout', translate("Logout")); ?></li>
-            <?php
-        }
-        else
-        {
-            ?>
+                                                    <?php
+                                                }
+                                                else
+                                                {
+                                                    ?>
                                                     <li><a id="logout" onclick="logout();"><?php echo translate("Logout"); ?></a></li>
-                                        <?php } ?>
+                                                <?php } ?>
 
                                             </ul>
                                         </li>
                                         <li id="inbox_icon" class="" style="padding: 0px"><a class="inbox_icon" href="<?php echo base_url(); ?>message/inbox"><img src="<?php echo base_url(); ?>/images/messageicon.fw.png" /></a></li>
-<?php endif; ?>
-<?php
-    $segment = $this->uri->segment(2);
-    if ($segment == 'help')
-    {
-        ?>
+                                <?php endif; ?>
+                                <?php
+                                    $segment = $this->uri->segment(2);
+                                    if ($segment == 'help')
+                                    {
+                                        ?>
                                         <script>
                                             $(document).ready(function () {
                                                 $('#view_help').hide();
@@ -899,7 +899,7 @@
                                                             </span>
                                                         </a>
 
-                                                        <?php } ?>
+                                                    <?php } ?>
                                                 <ul>
                                                     <?php
                                                         $static_que = $this->db->where('page_refer', 'guide')->where('status', 0)->from('help')->get();
@@ -948,13 +948,13 @@
                                                             if ($stat != 1)
                                                             {
                                                                 ?>
-            <?php echo '<li class="pop_help">'; ?><a href="<?php echo base_url() . 'home/help/' . $row->id; ?>"> <?php echo "$row->question"; ?> <?php } ?></a>
+                                                                    <?php echo '<li class="pop_help">'; ?><a href="<?php echo base_url() . 'home/help/' . $row->id; ?>"> <?php echo "$row->question"; ?> <?php } ?></a>
 
 
-        <?php
-        echo'</li>';
-    }
-?>
+                                                            <?php
+                                                            echo'</li>';
+                                                        }
+                                                    ?>
                                             </li>
 
 
@@ -983,9 +983,9 @@
                                     {
                                         ?>
                                         <li style="margin-top: 12px; float:left; margin-right: 20px;padding:0;line-height:normal;"> <a class="yellow btn" href="<?php echo site_url('rooms/new'); ?>"><span><?php echo translate('List Your Space'); ?></span></a> </li>
-        <?php
-    }
-?>
+                                                    <?php
+                                                }
+                                            ?>
                                 </ul>
 
                                 </li>
@@ -995,4 +995,3 @@
                             </div>					
                         </div>
                         <!--Header Ends-->
-
