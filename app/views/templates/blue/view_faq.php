@@ -41,41 +41,46 @@
     }
 
 </script>
-<div class="container_bg_faq inner_pad_top" id="View_Faq">
-    <div class="Box">
-        <div class="Box_Head">
-            <h2><?php echo translate("Frequently Asked Questions"); ?></h2>
-        </div>
-        <div id="vertical_container">
-            <?php
-                $i = 1;
-                if (isset($faqs) and $faqs->num_rows() > 0)
-                {
-                    foreach ($faqs->result() as $faq)
-                    {
-                        if ($faq->status == 1)
+
+<div class="container">
+    <div class="row">
+        <div class="container_bg_faq inner_pad_top" id="View_Faq">
+            <div class="Box">
+                <div class="Box_Head">
+                    <h2><?php echo translate("Frequently Asked Questions"); ?></h2>
+                </div>
+                <div id="vertical_container">
+                    <?php
+                        $i = 1;
+                        if (isset($faqs) and $faqs->num_rows() > 0)
                         {
-                            ?>
-                            <h1 class="accordion_toggle"><?php echo $faq->question; ?> </h1>
-                            <div style="height: 0px; display: none;" class="accordion_content">
-                                <?php echo $faq->faq_content; ?>
-                                <div id="horizontal_container"></div>
-                            </div>
-                            <?php
-                        }
+                            foreach ($faqs->result() as $faq)
+                            {
+                                if ($faq->status == 1)
+                                {
+                                    ?>
+                                    <h1 class="accordion_toggle"><?php echo $faq->question; ?> </h1>
+                                    <div style="height: 0px; display: none;" class="accordion_content">
+                                        <?php echo $faq->faq_content; ?>
+                                        <div id="horizontal_container"></div>
+                                    </div>
+                                    <?php
+                                }
+                                else
+                                {
+                                    echo '';
+                                }
+                            }//Foreach End
+                        }//If End
                         else
                         {
-                            echo '';
+                            echo '<p>' . translate('') . '</p>';
                         }
-                    }//Foreach End
-                }//If End
-                else
-                {
-                    echo '<p>' . translate('') . '</p>';
-                }
-            ?>
-        </div>
+                    ?>
+                </div>
 
+            </div>
+        </div>
     </div>
 </div>
 <script type="text/javascript">
@@ -88,5 +93,3 @@
 
 </script>
 <script type="text/javascript" src="<?php echo js_url(); ?>/urchin.js"></script>
-<script type="text/javascript">_uacct = "UA-624845-2";
-    urchinTracker();</script>
