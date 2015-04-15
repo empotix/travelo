@@ -1005,3 +1005,4 @@ li.photo_img_sub{padding-left:12.5px;padding-right:12.5px;width:29%;float:left;m
 #pannel_photo_item_id:hover .delete-photo-btn{display:block}
 .delete-photo-btn:hover{opacity:1;cursor:pointer}
 #guests>option{padding:5px;font-size:12px}
+footer{border-top: 1px solid #dbdbdb}
