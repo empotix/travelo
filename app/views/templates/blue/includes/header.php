@@ -23,7 +23,7 @@
             ?>" />
             <meta http-equiv="X-UA-Compatible" content="IE=edge">
                 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-                    <script src="<?php echo base_url() . 'js/facebook_invite.js'; ?>"></script>
+                    <script src="<?php echo js_url() . '/facebook_invite.js'; ?>"></script>
                     <?php
                         header("Cache-Control: no-store, no-cache, must-revalidate, max-age=0");
                         header("Expires: Sat, 26 Jul 1997 05:00:00 GMT");
@@ -42,7 +42,7 @@
                         }
                         $fb_app_id = $this->db->get_where('settings', array('code' => 'SITE_FB_API_ID'))->row()->string_value;
                     ?>
-                    <script>
+<!--                    <script>
 
                         FB.init({
                             appId: '<?php echo $fb_app_id; ?>',
@@ -64,8 +64,9 @@
                                 window.location.href = "<?php echo base_url() . 'users/logout'; ?>";
                             });
                         }
-                    </script>
-                    <script src="<?php echo base_url() . 'js/cufon-yui_2.js'; ?>" ></script>
+                    </script>-->
+                    <script src="<?php echo js_url() . '/jquery-1.9.1.js'; ?>" ></script>
+                    <script src="<?php echo js_url() . '/cufon-yui_2.js'; ?>" ></script>
                     <!-- End of meta content -->
                     <title><?php echo $title ?></title>
                     <link rel="search" type="application/opensearchdescription+xml" href="/opensearch.xml" title="Cogzidel" />
@@ -103,7 +104,7 @@
 
                     <script src="<?php echo bootstrap_url(); ?>/js/bootstrap.min.js" type="text/javascript"></script>
                     <script src="<?php echo js_url(); ?>/common.js" type="text/javascript"></script>
-                    <script type="text/javascript" src="<?php echo base_url() . 'js/jquery.validate.js'; ?>"></script>
+                    <script type="text/javascript" src="<?php echo js_url() . '/jquery.validate.js'; ?>"></script>
                     <script src="<?php echo js_url(); ?>/jquery-ui-1.8.14.custom.min.js" type="text/javascript"></script>
 
                     <?php
@@ -135,8 +136,7 @@
                                 <script type="text/javascript" src="<?php echo js_url(); ?>/jquery.sliderkit.1.8.min.js"></script>
                                 <script type="text/javascript" src="<?php echo js_url(); ?>/sliderkit.delaycaptions.min.js"></script>
                                 <script type="text/javascript" src="<?php echo js_url(); ?>/jquery.leanModal.min.js"></script>
-                                <script type="text/javascript" src="<?php echo base_url(); ?>/js/responsiveslides.min.js"></script>
-                                <!--<script type="text/javascript" src="jquery.js"></script>-->
+                                <script type="text/javascript" src="<?php echo js_url(); ?>/responsiveslides.min.js"></script>
                                 <?php
                             }
                         }
