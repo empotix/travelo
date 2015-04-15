@@ -189,7 +189,7 @@
             </div>
             <!-- search_body -->
             <div class="col-md-12" style="padding: 0">
-                <div class="col-md-8">
+                <div class="col-md-6">
                     <div class="search-main-left">
                         <div class="Box_Head clearfix">
                             <!-- Left -->   
@@ -239,7 +239,7 @@
                 </div>
                 <!--End Of search_body -->
                 <!-- Contents below this is for the search filters -->
-                <div class="col-md-4">
+                <div class="col-md-6">
                     <div id="search_filters_wrapper" class="search-main-right">
                         <div id="search_filters">
                             <!-- this partial is wrapped in a div class='search_filters' -->
@@ -526,7 +526,7 @@
     </div>
     </td>
     <td width="10%" valign="middle" align="center">
-    <a class="btn green bookit_button" href="#" alt="<*=this.price*>" name="<*= this.hosting_id *>" id="book_it_button" oncontextmenu="return false" style="display: inline-block; padding: 3px 10px; text-align: center; width: 77px; margin: 0px; line-height:18px;"><?php echo translate('Book it'); ?></a>
+    <a class="btn green bookit_button large" href="#" alt="<*=this.price*>" name="<*= this.hosting_id *>" id="book_it_button" oncontextmenu="return false" style="display: inline-block; padding: 3px 10px; text-align: center;margin: 0px;"><?php echo translate('Book it'); ?></a>
     </td>
     </tr>
     </tbody>
