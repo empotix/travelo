@@ -73,327 +73,338 @@
 </style>
 
 <!---- End of script------->
-<div id="Search_Main" class="list_view condensed_header_view">
-    <!-- search_header -->
-    <div id="Selsearch_params"> 
-        <form onsubmit="clean_up_and_submit_search_request();
-                return false;" id="search_form" style="border:none;">
-            <div class="SerPar_Inp_Bg">
-               <!-- <label for="location" class="inner_text" id="location_label" style="display:none;"><?php echo translate("City, address, or zip code"); ?></label>
-                    <input type="text" autocomplete="off" id="location" name="location" />-->
-                <input id="location" class="location" type="text" value="<?php echo translate("Where_do_you_want_to_go"); ?>" name="location" autocomplete="off" onblur="if (this.value == '') {
-                            this.value = '<?php echo translate("Where_do_you_want_to_go"); ?>';
-                        }"
-                       onfocus="if (this.value == '<?php echo translate("Where_do_you_want_to_go"); ?>') {
-                                   this.value = '';
-                               }" placeholder="<?php echo translate("Where_do_you_want_to_go"); ?>">
-            </div>
-            <div id="SelSer_Par_Inps">
-                <div class="dates_section">
-                    <div class="heading">
-                        <?php echo translate("Check_ins"); ?>
-                    </div>
-                    <input id="checkin" class="checkin date active" name="checkin" autocomplete="off" value="Check In" readonly/>
-                </div>
-                <div class="dates_section">
-                    <div class="heading">
-                        <?php echo translate("Check_outs"); ?>
-                    </div>
-                    <input id="checkout" class="checkout date active" name="checkout" autocomplete="off" value="Check Out" readonly/>
-                </div>
-                <div class="guests_section">
-                    <div class="heading">
-                        <?php echo translate("Guests"); ?>
-                    </div>
-                    <select id="number_of_guests" name="number_of_guests" value="Guests">
-
-                        <option value="1">1</option>
-                        <option value="2">2</option>
-                        <option value="3">3</option>
-                        <option value="4">4</option>
-                        <option value="5">5</option>
-                        <option value="6">6</option>
-                        <option value="7">7</option>
-                        <option value="8">8</option>
-                        <option value="9">9</option>
-                        <option value="10">10</option>
-                        <option value="11">11</option>
-                        <option value="12">12</option>
-                        <option value="13">13</option>
-                        <option value="14">14</option>
-                        <option value="15">15</option>
-                        <option value="16">16+</option>
-                    </select>
-                </div>
-            </div>
-            <div class="clsSer_Par_LocButt">
-                <input class="btn green search_pagebut" type="submit" id="submit_location" name="submit_location" style="float:right;" value="<?php echo translate("Search"); ?>" onclick="show();"/>
-                <input type="hidden" name="page" id="page" value="<?php echo $page; ?>" />
-            </div>
-            <div style="clear:both"></div>
-        </form>
-    </div>
-    <!--Filters -->
-    <div id="search_new_filters">
-        <div id="sort_by_filter">
-            <p>
-                <span><?php echo translate("Sort by"); ?>:</span>
-                <select name="sort" id="sort">
-                    <option value="1"><?php echo translate("Recommended"); ?></option>
-                    <option value="2"><?php echo translate("Price: low to high"); ?></option>
-                    <option value="3"><?php echo translate("Price: high to low"); ?> </option>
-                    <option value="4"><?php echo translate("Newest"); ?></option>
-                </select>
-            </p>
-        </div>
-        <div id="property_type_filter">
-            <p>
-                <span><?php echo translate("Property Type:"); ?></span>
-                <select name="property_type" id="property_type">
-                    <option value="1"><?php echo translate("All"); ?></option>
-                    <?php
-                        foreach ($property_type as $property)
-                        {
-                            echo " <option value='" . $property['id'] . "'>" . $property['type'] . "</option>";
-                        }
-                    ?>
-                </select>
-            </p>
-        </div>
-        <div id="bed_room_filter">
-            <p>
-                <span><?php echo translate("Bedrooms:"); ?></span>
-                <select name="min_bedrooms" id="min_bedrooms">
-                    <option value=""><?php echo translate("None"); ?></option>
-                    <?php for ($i = 1; $i <= 16; $i++)
-                        {
-                            ?>
-                            <option value="<?php echo $i; ?>"><?php echo $i; ?> <?php echo translate('bedroom'); ?><?php if ($i > 1) echo 's'; ?></option>
-    <?php } ?>
-                </select>
-                </select>
-                <label id="results_count_top"></label>
-            </p>
-        </div>
-
-    </div>
-    <!--Filters End-->	
-    <!-- search_params -->
-    <div id="standby_action_area" style="display:none;">
-        <div> <b><a id="standby_link" href="/messaging/standby" target="_blank">
-<?php echo translate("Do you need a place <i>pronto</i>? Join our Standby list!"); ?>
-                </a></b> </div>
-    </div>
-    <!-- search_body -->
-    <div class="search-main-left">
-        <div class="Box_Head clearfix">
-            <!-- Left -->   
-            <div id="search_type_toggle">
-                <div class="search_type_option search_type_option_active" id="search_type_list">
-                    <span><?php echo translate("List"); ?></span>
-                </div>
-                <div class="search_type_option clsBorder_No" id="search_type_map"><span><?php echo translate("Map"); ?></span></div>
-                <div class="search_type_option" id="search_type_short" onclick="view_shortlist(this)">
-                    <input type="hidden" id="short" value="short">
-                    <span><?php echo translate("My Wishlist"); ?></span>
-                </div>	
-            </div>
-            <!-- End of Left -->
-            <!-- Right -->
-            <!-- End of Right -->
-            <div class="social_links">
-                <!-- AddThis Button BEGIN -->
-                <div class="addthis_toolbox addthis_default_style ">
-                    <a class="addthis_counter addthis_pill_style"></a>
-                </div>
-                <script type="text/javascript">var addthis_config = {"data_track_addressbar": true};</script>
-                <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5202fbea486f356f"></script>
-                <!-- AddThis Button END -->
-            </div>
-        </div>
-        <div style="clear:both"></div>   
-        <div id="search_body" class="Box">
-            <!-- Results header was here initially -->
-            <!--  End of results header -->
-            <div id="results_filters" style="">
-                <div id="filters_text"><?php echo translate("Filters:"); ?></div>
-                <ul id="applied_filters">
-                </ul>
-            </div>
-            <ul id="results">
-            </ul>
-            <!-- results -->
-            <div id="results_footer" class="clearfix"style="display:none;">
-                <div class="results_count clsFloatLeft"></div>
-                <div id="results_pagination" class="clsFloatRight"></div>
-            </div>
-            <!-- results_footer -->
-            <div id="list_view_loading" class="rounded_more" style="display:none;"> <img src="<?php echo base_url(); ?>images/page2_spinner.gif" style="vertical-align: middle;" height="42" width="42" alt="" /> </div>
-        </div>
-    </div>
-    <!--End Of search_body -->
-    <!-- Contents below this is for the search filters -->
-    <div id="search_filters_wrapper" class="search-main-right">
-        <div id="search_filters">
-            <!-- this partial is wrapped in a div class='search_filters' -->
-            <!-- Map Container Hidden-->
-            <div id="map_options"><input type="checkbox" name="redo_search_in_map" id="redo_search_in_map" /><label for="redo_search_in_map"><?php echo translate("Redo search in map"); ?></label></div>
-
-            <div id="map_wrapper">
-                <p class="zoom_info" style="color: #1D95CB;"><?php echo translate("Left double click for zoom in and Right double click for zoom out."); ?></p>
-                <div class="Box" id="Mab_Big_Main">
-                    <div class="Box_Content">
-                        <div id="search_map"></div>
-                    </div>
-                </div>
-                <div id="map_view_loading" class="rounded_more" style="display:none;"><img src="<?php echo base_url(); ?>images/page2_spinner.gif" style="display:block; float:left; padding:0 12px 0 0;"/><?php echo translate("Loading"); ?>...</div>
-                <div id="map_message" style="display:none;"></div>
-                <div id="first_time_map_question" style="display:none;">
-                    <div id="first_time_map_question_content" class="rounded">
-                        <div id="first_time_map_question_arrow"></div>
-                        <p><?php echo translate("Check this box to see new search results as you move the map"); ?>.</p>
-
-                        <a id="redo_search_in_map_link_on" href="javascript:void(0);"><?php echo translate("Yes, please"); ?></a>
-                        <a id="redo_search_in_map_link_off" href="javascript:void(0);"><?php echo translate("No, thanks"); ?></a>
-                    </div>
-                </div>
-            </div>
-
-            <ul class="collapsable_filters">
-                <li class="search_filter" id="room_type_container">
-                    <div class="Box searchpage_Box">
-                        <div class="Box_Head searchhead">
-                            <a class="filter_toggle"></a>
-                            <h2><a class="filter_header" href="javascript:void(0);"><?php echo translate("Room type"); ?></a></h2>
+<div class="container">
+    <div class="row">
+        <div id="Search_Main" class="list_view condensed_header_view">
+            <!-- search_header -->
+            <div id="Selsearch_params"> 
+                <form onsubmit="clean_up_and_submit_search_request();
+                        return false;" id="search_form" style="border:none;">
+                    <div>
+                        <div class="col-md-5">
+                            <input id="location" class="SerPar_Inp_Bg" type="text" value="<?php echo translate("Where_do_you_want_to_go"); ?>" name="location" autocomplete="off" onblur="if (this.value == '') {
+                                        this.value = '<?php echo translate("Where_do_you_want_to_go"); ?>';
+                                    }"
+                                   onfocus="if (this.value == '<?php echo translate("Where_do_you_want_to_go"); ?>') {
+                                               this.value = '';
+                                           }" placeholder="<?php echo translate("Where_do_you_want_to_go"); ?>">
                         </div>
-                        <!-- Search filter content is below this -->
-                        <ul class="search_filter_content">
-                            <li class="clearfix">
-                                <input type="checkbox" value="Entire home/apt" name="room_types" class="room_0" id="room_type_0" <?php
-                                    if (isset($room_types1))
-                                    {
-                                        if ($room_types1 == 'Entire home/apt')
-                                        {
-                                            echo "checked";
-                                        }
-                                    }
-                                ?>	>
-                                <label for="room_type_0"> <?php echo translate("Entire home/apt"); ?> </label>
-                            </li>
-
-                            <li class="clearfix">
-                                <input type="checkbox" value="Private room" name="room_types" id="room_type_1" <?php
-                                    if (isset($room_types2))
-                                    {
-                                        if ($room_types2 == 'Private room')
-                                        {
-                                            echo "checked";
-                                        }
-                                    }
-                                ?>>
-                                <label for="room_type_1"> <?php echo translate("Private room"); ?> </label>
-                            </li>
-                            <li class="clearfix">
-                                <input type="checkbox" value="Shared room" name="room_types" id="room_type_2" <?php
-                                    if (isset($room_types3))
-                                    {
-                                        if ($room_types3 == 'Shared room')
-                                        {
-                                            echo "checked";
-                                        }
-                                    }
-                                ?> >
-                                <label for="room_type_2"><?php echo translate("Shared room"); ?></label>
-                            </li>
-                            <li class="Txt_Right_Align"><a class="show_more_link" href="javascript:void(0);"><?php echo translate("Show More"); ?>...</a></li>
-                        </ul>
-                        <div style="clear:both"></div>
-                    </div>
-                    <!-- End of search filter content -->
-                </li>
-                <li style="clear:both;"></li>
-
-
-                <li id="price_container" class="search_filter">
-                    <div class="Box searchpage_Box">
-                        <div class="Box_Head searchhead">
-                            <a class="filter_toggle"></a>
-                            <h2><a href="javascript:void(0);" class="filter_header"><?php echo translate("Price"); ?></a></h2>
-                        </div>
-                        <div class="search_filter_content">
-                            <div id="slider-range" class="ui-slider ui-slider-horizontal ui-widget ui-widget-content ui-corner-all"><div class="ui-slider-range ui-widget-header" style="left: 0%; width: 100%;"></div><a href="#" class="ui-slider-handle ui-state-default ui-corner-all" style="left: 0%;"></a><a href="#" class="ui-slider-handle ui-state-default ui-corner-all" style="left: 100%;"></a></div>
-                            <ul id="slider_values">
-                                <li id="slider_user_min">$10</li>
-                                <li id="slider_user_max">$10000+ </li>
-                            </ul>
-                        </div>
-                    </div>
-                </li>
-                <li id="amenities_container" class="search_filter closed">
-                    <div class="Box searchpage_Box">
-                        <div class="Box_Head searchhead">
-                            <a class="filter_toggle"></a>
-                            <h2><a href="javascript:void(0);" class="filter_header"><?php echo translate("Amenities"); ?></a></h2>
-                        </div>
-                        <ul class="search_filter_content">
-                            <li class="clearfix">
-                                <input type="checkbox" value="1" name="amenities" id="amenity_0"> 
-                                <label for="amenity_0"><?php echo translate("Smoking Allowed "); ?></label>
-                            </li>
-                            <li class="clearfix">
-                                <input type="checkbox" value="2" name="amenities" id="amenity_1"> 
-                                <label for="amenity_1"><?php echo translate("Pets Allowed"); ?></label>
-                            </li>
-                            <li class="clearfix">
-                                <input type="checkbox" value="7" name="amenities" id="amenity_2"> 
-                                <label for="amenity_2"><?php echo translate("Elevator in Building "); ?></label>
-                            </li>
-                            <li class="Txt_Right_Align">
-                                <a class="show_more_link" href="javascript:void(0);"><?php echo translate("Show More"); ?>...</a>
-                            </li>
-                        </ul>
-                    </div>
-                </li>				
-
-                <li id="amenities_container" class="search_filter closed">
-                    <div class="Box searchpage_Box">
-                        <div class="Box_Head searchhead">
-                            <a class="filter_toggle"></a>
-                            <h2><a href="javascript:void(0);" onclick="show()" class="filter_header"><?php echo translate("Neighborhood"); ?></a></h2>
-                        </div>
-                        <ul class="search_filter_content">
-                            <li class="clearfix">
-                                <div id="neighbor">
-
-
+                        <div id="SelSer_Par_Inps" class="col-md-7">
+                            <div class="dates_section col-md-4">
+                                <div class="heading">
+                                    <?php echo translate("Check_ins"); ?>
                                 </div>
-                            </li>
-                        </ul>
+                                <input id="checkin" class="checkin date active" name="checkin" autocomplete="off" value="Check In" readonly/>
+                            </div>
+                            <div class="dates_section col-md-4">
+                                <div class="heading">
+                                    <?php echo translate("Check_outs"); ?>
+                                </div>
+                                <input id="checkout" class="checkout date active" name="checkout" autocomplete="off" value="Check Out" readonly/>
+                            </div>
+                            <div class="guests_section col-md-3">
+                                <div class="heading">
+                                    <?php echo translate("Guests"); ?>
+                                </div>
+                                <select id="number_of_guests" name="number_of_guests" value="Guests">
 
-                    </div>
-                </li>			
-                <li id="keywords_container" class="search_filter closed">
-                    <div class="Box searchpage_Box">
-                        <div class="Box_Head searchhead">
-                            <a class="filter_toggle"></a>
-                            <h2><a href="javascript:void(0);" class="filter_header"><?php echo translate("Keywords"); ?></a></h2>
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5</option>
+                                    <option value="6">6</option>
+                                    <option value="7">7</option>
+                                    <option value="8">8</option>
+                                    <option value="9">9</option>
+                                    <option value="10">10</option>
+                                    <option value="11">11</option>
+                                    <option value="12">12</option>
+                                    <option value="13">13</option>
+                                    <option value="14">14</option>
+                                    <option value="15">15</option>
+                                    <option value="16">16+</option>
+                                </select>
+                            </div>
+                            <div class="clsSer_Par_LocButt col-md-1">
+                                <input class="btn green search_pagebut" type="submit" id="submit_location" name="submit_location" style="float:right;" value="<?php echo translate("Search"); ?>" onclick="show();"/>
+                                <input type="hidden" name="page" id="page" value="<?php echo $page; ?>" />
+                            </div>
                         </div>
-                        <ul class="search_filter_content">
-                            <li class="clearfix">
-                                <input type="text" id="keywords" name="keywords" defaultvalue="Enter Keywords" class="active">
-                                <a href="#" onclick="clean_up_and_submit_search_request();
-                                        return false;" id="submit_keyword"></a>
-                            </li>
-                        </ul>
                     </div>
-                </li>
-
-
-            </ul>
-            <div id="small_map_loading" class="opacity_80 rounded" style="display:none; border:2px solid #989898; -moz-box-shadow:0 0 2px #A8A8A8; -webkit-box-shadow:0 0 2px #A8A8A8;"><img src="<?php echo base_url(); ?>images/page2_spinner.gif" style="width:16px; height:16px; display:block; float:left;"/>
-<?php translate("Loading...", $this->session->userdata('lang')); ?>
+                    <div class="clearfix"></div>
+                </form>
             </div>
-            <div id="search_filters_toggle" class="search_filters_toggle_on rounded_left"></div>
+            <!--Filters -->
+            <div id="search_new_filters" class="col-md-12">
+                <div id="sort_by_filter" class="col-md-3">
+                    <p>
+                        <span><?php echo translate("Sort by"); ?>:</span>
+                        <select name="sort" id="sort">
+                            <option value="1"><?php echo translate("Recommended"); ?></option>
+                            <option value="2"><?php echo translate("Price: low to high"); ?></option>
+                            <option value="3"><?php echo translate("Price: high to low"); ?> </option>
+                            <option value="4"><?php echo translate("Newest"); ?></option>
+                        </select>
+                    </p>
+                </div>
+                <div id="property_type_filter" class="col-md-3">
+                    <p>
+                        <span><?php echo translate("Property Type:"); ?></span>
+                        <select name="property_type" id="property_type">
+                            <option value="1"><?php echo translate("All"); ?></option>
+                            <?php
+                                foreach ($property_type as $property)
+                                {
+                                    echo " <option value='" . $property['id'] . "'>" . $property['type'] . "</option>";
+                                }
+                            ?>
+                        </select>
+                    </p>
+                </div>
+                <div id="bed_room_filter" class="col-md-5">
+                    <p>
+                        <span><?php echo translate("Bedrooms:"); ?></span>
+                        <select name="min_bedrooms" id="min_bedrooms">
+                            <option value=""><?php echo translate("None"); ?></option>
+                            <?php
+                                for ($i = 1; $i <= 16; $i++)
+                                {
+                                    ?>
+                                    <option value="<?php echo $i; ?>"><?php echo $i; ?> <?php echo translate('bedroom'); ?><?php if ($i > 1) echo 's'; ?></option>
+                                <?php } ?>
+                        </select>
+                        </select>
+                        <label id="results_count_top"></label>
+                    </p>
+                </div>
+
+            </div>
+            <!--Filters End-->	
+            <!-- search_params -->
+            <div id="standby_action_area" style="display:none;">
+                <div> <b><a id="standby_link" href="/messaging/standby" target="_blank">
+                            <?php echo translate("Do you need a place <i>pronto</i>? Join our Standby list!"); ?>
+                        </a></b> </div>
+            </div>
+            <!-- search_body -->
+            <div class="col-md-12" style="padding: 0">
+                <div class="col-md-8">
+                    <div class="search-main-left">
+                        <div class="Box_Head clearfix">
+                            <!-- Left -->   
+                            <div id="search_type_toggle">
+                                <div class="search_type_option search_type_option_active" id="search_type_list">
+                                    <span><?php echo translate("List"); ?></span>
+                                </div>
+                                <div class="search_type_option clsBorder_No" id="search_type_map"><span><?php echo translate("Map"); ?></span></div>
+                                <div class="search_type_option" id="search_type_short" onclick="view_shortlist(this)">
+                                    <input type="hidden" id="short" value="short">
+                                    <span><?php echo translate("My Wishlist"); ?></span>
+                                </div>	
+                            </div>
+                            <!-- End of Left -->
+                            <!-- Right -->
+                            <!-- End of Right -->
+                            <div class="social_links">
+                                <!-- AddThis Button BEGIN -->
+                                <!--                <div class="addthis_toolbox addthis_default_style ">
+                                                    <a class="addthis_counter addthis_pill_style"></a>
+                                                </div>
+                                                <script type="text/javascript">var addthis_config = {"data_track_addressbar": true};</script>
+                                                <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5202fbea486f356f"></script>-->
+                                <!-- AddThis Button END -->
+                            </div>
+                        </div>
+                        <div style="clear:both"></div>   
+                        <div id="search_body" class="Box">
+                            <!-- Results header was here initially -->
+                            <!--  End of results header -->
+                            <div id="results_filters" style="">
+                                <div id="filters_text"><?php echo translate("Filters:"); ?></div>
+                                <ul id="applied_filters">
+                                </ul>
+                            </div>
+                            <ul id="results">
+                            </ul>
+                            <!-- results -->
+                            <div id="results_footer" class="clearfix"style="display:none;">
+                                <div class="results_count clsFloatLeft"></div>
+                                <div id="results_pagination" class="clsFloatRight"></div>
+                            </div>
+                            <!-- results_footer -->
+                            <div id="list_view_loading" class="rounded_more" style="display:none;"> <img src="<?php echo base_url(); ?>images/page2_spinner.gif" style="vertical-align: middle;" height="42" width="42" alt="" /> </div>
+                        </div>
+                    </div>
+                </div>
+                <!--End Of search_body -->
+                <!-- Contents below this is for the search filters -->
+                <div class="col-md-4">
+                    <div id="search_filters_wrapper" class="search-main-right">
+                        <div id="search_filters">
+                            <!-- this partial is wrapped in a div class='search_filters' -->
+                            <!-- Map Container Hidden-->
+                            <div id="map_options"><input type="checkbox" name="redo_search_in_map" id="redo_search_in_map" /><label for="redo_search_in_map"><?php echo translate("Redo search in map"); ?></label></div>
+
+                            <div id="map_wrapper">
+                                <p class="zoom_info" style="color: #1D95CB;"><?php echo translate("Left double click for zoom in and Right double click for zoom out."); ?></p>
+                                <div class="Box" id="Mab_Big_Main">
+                                    <div class="Box_Content">
+                                        <div id="search_map"></div>
+                                    </div>
+                                </div>
+                                <div id="map_view_loading" class="rounded_more" style="display:none;"><img src="<?php echo base_url(); ?>images/page2_spinner.gif" style="display:block; float:left; padding:0 12px 0 0;"/><?php echo translate("Loading"); ?>...</div>
+                                <div id="map_message" style="display:none;"></div>
+                                <div id="first_time_map_question" style="display:none;">
+                                    <div id="first_time_map_question_content" class="rounded">
+                                        <div id="first_time_map_question_arrow"></div>
+                                        <p><?php echo translate("Check this box to see new search results as you move the map"); ?>.</p>
+
+                                        <a id="redo_search_in_map_link_on" href="javascript:void(0);"><?php echo translate("Yes, please"); ?></a>
+                                        <a id="redo_search_in_map_link_off" href="javascript:void(0);"><?php echo translate("No, thanks"); ?></a>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <ul class="collapsable_filters">
+                                <li class="search_filter" id="room_type_container">
+                                    <div class="Box searchpage_Box">
+                                        <div class="Box_Head searchhead">
+                                            <a class="filter_toggle"></a>
+                                            <h2><a class="filter_header" href="javascript:void(0);"><?php echo translate("Room type"); ?></a></h2>
+                                        </div>
+                                        <!-- Search filter content is below this -->
+                                        <ul class="search_filter_content">
+                                            <li class="clearfix">
+                                                <input type="checkbox" value="Entire home/apt" name="room_types" class="room_0" id="room_type_0" <?php
+                                                    if (isset($room_types1))
+                                                    {
+                                                        if ($room_types1 == 'Entire home/apt')
+                                                        {
+                                                            echo "checked";
+                                                        }
+                                                    }
+                                                ?>	>
+                                                <label for="room_type_0"> <?php echo translate("Entire home/apt"); ?> </label>
+                                            </li>
+
+                                            <li class="clearfix">
+                                                <input type="checkbox" value="Private room" name="room_types" id="room_type_1" <?php
+                                                    if (isset($room_types2))
+                                                    {
+                                                        if ($room_types2 == 'Private room')
+                                                        {
+                                                            echo "checked";
+                                                        }
+                                                    }
+                                                ?>>
+                                                <label for="room_type_1"> <?php echo translate("Private room"); ?> </label>
+                                            </li>
+                                            <li class="clearfix">
+                                                <input type="checkbox" value="Shared room" name="room_types" id="room_type_2" <?php
+                                                    if (isset($room_types3))
+                                                    {
+                                                        if ($room_types3 == 'Shared room')
+                                                        {
+                                                            echo "checked";
+                                                        }
+                                                    }
+                                                ?> >
+                                                <label for="room_type_2"><?php echo translate("Shared room"); ?></label>
+                                            </li>
+                                            <li class="Txt_Right_Align"><a class="show_more_link" href="javascript:void(0);"><?php echo translate("Show More"); ?>...</a></li>
+                                        </ul>
+                                        <div style="clear:both"></div>
+                                    </div>
+                                    <!-- End of search filter content -->
+                                </li>
+                                <li style="clear:both;"></li>
+
+
+                                <li id="price_container" class="search_filter">
+                                    <div class="Box searchpage_Box">
+                                        <div class="Box_Head searchhead">
+                                            <a class="filter_toggle"></a>
+                                            <h2><a href="javascript:void(0);" class="filter_header"><?php echo translate("Price"); ?></a></h2>
+                                        </div>
+                                        <div class="search_filter_content">
+                                            <div id="slider-range" class="ui-slider ui-slider-horizontal ui-widget ui-widget-content ui-corner-all"><div class="ui-slider-range ui-widget-header" style="left: 0%; width: 100%;"></div><a href="#" class="ui-slider-handle ui-state-default ui-corner-all" style="left: 0%;"></a><a href="#" class="ui-slider-handle ui-state-default ui-corner-all" style="left: 100%;"></a></div>
+                                            <ul id="slider_values">
+                                                <li id="slider_user_min">$10</li>
+                                                <li id="slider_user_max">$10000+ </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li id="amenities_container" class="search_filter closed">
+                                    <div class="Box searchpage_Box">
+                                        <div class="Box_Head searchhead">
+                                            <a class="filter_toggle"></a>
+                                            <h2><a href="javascript:void(0);" class="filter_header"><?php echo translate("Amenities"); ?></a></h2>
+                                        </div>
+                                        <ul class="search_filter_content">
+                                            <li class="clearfix">
+                                                <input type="checkbox" value="1" name="amenities" id="amenity_0"> 
+                                                <label for="amenity_0"><?php echo translate("Smoking Allowed "); ?></label>
+                                            </li>
+                                            <li class="clearfix">
+                                                <input type="checkbox" value="2" name="amenities" id="amenity_1"> 
+                                                <label for="amenity_1"><?php echo translate("Pets Allowed"); ?></label>
+                                            </li>
+                                            <li class="clearfix">
+                                                <input type="checkbox" value="7" name="amenities" id="amenity_2"> 
+                                                <label for="amenity_2"><?php echo translate("Elevator in Building "); ?></label>
+                                            </li>
+                                            <li class="Txt_Right_Align">
+                                                <a class="show_more_link" href="javascript:void(0);"><?php echo translate("Show More"); ?>...</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </li>				
+
+                                <li id="amenities_container" class="search_filter closed">
+                                    <div class="Box searchpage_Box">
+                                        <div class="Box_Head searchhead">
+                                            <a class="filter_toggle"></a>
+                                            <h2><a href="javascript:void(0);" onclick="show()" class="filter_header"><?php echo translate("Neighborhood"); ?></a></h2>
+                                        </div>
+                                        <ul class="search_filter_content">
+                                            <li class="clearfix">
+                                                <div id="neighbor">
+
+
+                                                </div>
+                                            </li>
+                                        </ul>
+
+                                    </div>
+                                </li>			
+                                <li id="keywords_container" class="search_filter closed">
+                                    <div class="Box searchpage_Box">
+                                        <div class="Box_Head searchhead">
+                                            <a class="filter_toggle"></a>
+                                            <h2><a href="javascript:void(0);" class="filter_header"><?php echo translate("Keywords"); ?></a></h2>
+                                        </div>
+                                        <ul class="search_filter_content">
+                                            <li class="clearfix">
+                                                <input type="text" id="keywords" name="keywords" defaultvalue="Enter Keywords" class="active">
+                                                <a href="#" onclick="clean_up_and_submit_search_request();
+                                                return false;" id="submit_keyword"></a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </li>
+
+
+                            </ul>
+                            <div id="small_map_loading" class="opacity_80 rounded" style="display:none; border:2px solid #989898; -moz-box-shadow:0 0 2px #A8A8A8; -webkit-box-shadow:0 0 2px #A8A8A8;"><img src="<?php echo base_url(); ?>images/page2_spinner.gif" style="width:16px; height:16px; display:block; float:left;"/>
+                                <?php translate("Loading...", $this->session->userdata('lang')); ?>
+                            </div>
+                            <div id="search_filters_toggle" class="search_filters_toggle_on rounded_left"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </div>
@@ -404,10 +415,10 @@
         <div id="blank_state_molecule"></div>
         <div id="blank_state_text">
             <h3>
-<?php echo translate("Your search was a little too specific."); ?>
+                <?php echo translate("Your search was a little too specific."); ?>
             </h3>
             <p style="padding:15px 0 0 5px;">
-<?php echo translate("We suggest unchecking a couple of filters, or searching for a different city."); ?>
+                <?php echo translate("We suggest unchecking a couple of filters, or searching for a different city."); ?>
             </p>
         </div>
     </li>
@@ -471,7 +482,7 @@
     <* } *>
     <ul class="reputation"> <a href="<?php echo base_url(); ?>users/profile/<*= this.user_id *>"><img alt="<*= this.user_name *>" height="36" src="<*= this.user_thumbnail_url *>" title="<*= this.user_name *>" width="36" /></a> </ul>
     </div>
-    <div class="price">
+    <div class="price pull-right">
     <div class="price_data">
     <sup class="currency_if_required"><*= CogzidelSearch.currencySymbolRight *></sup>
     <!--  <?php
@@ -503,9 +514,9 @@
     <table width="90%" cellspacing="0" cellpadding="0" border="0" style="padding:10px 0 0; margin:0;">
     <tbody><tr>
     <td width="65%" valign="middle" align="right" style="float:right; padding-right:10px; padding-top:10px;">
-    <div style="float:left; padding:3px 5px; color:#333; margin-left:80px; line-height: 20px;" class="count_badge">
+    <div class="count_badge">
     <*= this.views*></div>
-    <div style="float:left;padding:4px 0 0 5px;"><?php echo translate('Views'); ?></div></td>
+    <div style="display:inline-block;padding:4px 0 0 5px;"><?php echo translate('Views'); ?></div></td>
     <td width="25%" valign="middle" align="center"> <div class="addshortlist">
     <* if(this.short_listed == 1) { *>
     <a href="#"><input class="accept_button" oncontextmenu="return false" type="button" value="<?php echo translate("Saved to Wish List"); ?>" id="my_shortlist" onclick="add_shortlist(<*= this.hosting_id *>,this);"></a>
@@ -625,11 +636,12 @@
                         <li>
                             <label for="min_bedrooms"><?php echo translate("Bedrooms"); ?></label>
                             <select class="dropdown" id="min_bedrooms" name="min_bedrooms"><option value=""></option>
-                                <?php for ($i = 1; $i <= 16; $i++)
+                                <?php
+                                    for ($i = 1; $i <= 16; $i++)
                                     {
                                         ?>
                                         <option value="<?php echo $i; ?>"><?php echo $i; ?> </option>
-    <?php } ?>
+                                    <?php } ?>
                             </select>
                         </li>
 
@@ -660,16 +672,18 @@
                             <label for="min_beds"><?php echo translate("Beds"); ?></label>
                             <select class="dropdown" id="min_beds" name="min_beds">
                                 <option value=""></option>
-<?php for ($i = 1; $i <= 16; $i++)
-    {
-        ?>
+                                <?php
+                                    for ($i = 1; $i <= 16; $i++)
+                                    {
+                                        ?>
 
-                                        <option value="<?php echo $i; ?>"><?php echo $i;
-                                if ($i == 16)
-                                    echo '+';
-                                ?> </option>
+                                        <option value="<?php echo $i; ?>"><?php
+                                            echo $i;
+                                            if ($i == 16)
+                                                echo '+';
+                                            ?> </option>
 
-    <?php } ?>
+                                    <?php } ?>
                             </select>
                         </li>
                         <li>
@@ -697,7 +711,7 @@
                                 ?>
                                 <input type="checkbox" value="<?php echo $value->type; ?>" name="property_type_id" id="lightbox_property_type_id_<?php echo $value->type; ?>">
                                 <label for="lightbox_property_type_id_<?php echo $value->type; ?>"><?php echo $value->type . '<br>'; ?></label>
-    <?php } echo '</li>'; ?>
+                            <?php } echo '</li>'; ?>
 
                     </ul> 
                 </div>
@@ -719,9 +733,10 @@
                         <input type="checkbox" name="amenities" id="lightbox_amenity_<?php echo $j; ?>" value="<?php echo $j; ?>">
                         <label for="lightbox_amenity_<?php echo $j; ?>"><?php echo $rows->name; ?></label>
                     </li>
-        <?php $j++;
-    } echo '</ul>';
-?> 
+                    <?php
+                    $j++;
+                } echo '</ul>';
+            ?> 
 
             </li>
 
@@ -769,8 +784,8 @@
     /*if ((navigator.userAgent.indexOf('iPhone') == -1) && (navigator.userAgent.indexOf('iPod') == -1) && (navigator.userAgent.indexOf('iPad') == -1)) {
      jQuery(window).load(function() {
      LazyLoad.js([
-     "<?php //echo base_url().'js'   ?>/jquery.autocomplete_custom.pack.js",
-     "<?php //echo base_url().'js'   ?>/ en_autocomplete_data.js"],
+     "<?php //echo base_url().'js'     ?>/jquery.autocomplete_custom.pack.js",
+     "<?php //echo base_url().'js'     ?>/ en_autocomplete_data.js"],
      function() {
      jQuery("#location").autocomplete(autocomplete_terms, {
      minChars: 1, width: 322, max:20, matchContains: false, autoFill: true,
@@ -829,7 +844,7 @@
         SearchFilters.amenities.a_31 = ["Family/Kid Friendly", false];
         SearchFilters.amenities.a_32 = ["Suitable for Events", false];
 
-        //CogzidelSearch.currencySymbolLeft = '<?php //echo get_currency_symbol(1);   ?>';
+        //CogzidelSearch.currencySymbolLeft = '<?php //echo get_currency_symbol(1);     ?>';
         CogzidelSearch.currencySymbolRight = "";
         SearchFilters.minPrice = 10;
         SearchFilters.maxPrice = 10000;
@@ -966,5 +981,3 @@
 
     });
 </script>
-<script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script>
-

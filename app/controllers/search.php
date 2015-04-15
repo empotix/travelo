@@ -1,18 +1,5 @@
 <?php
 
-    /**
-     * DROPinn Search Controller Class
-     *
-     * Its the powerfull search functionality controller
-     *
-     * @package		DROPinn
-     * @subpackage	Controllers
-     * @category	Search
-     * @author		Cogzidel Product Team
-     * @version		Version 1.6
-     * @link		http://www.cogzidel.com
-
-     */
     if (!defined('BASEPATH'))
         exit('No direct script access allowed');
 
