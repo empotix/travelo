@@ -39,12 +39,11 @@
                         </li>
                     <?php } ?>
             </ul>
-        </div> </div>
-</div>
-<div class="search-area">
-    <div id="blob-bg" style="display: block; opacity: 0.5;">
-        <img width="600" height="180" src="css/templates/blue/images/search_bg.png" alt="">
+        </div> 
     </div>
+</div>
+
+<div class="search-area hidden-xs">
     <?php
         $result = $this->db->where('status', 0)->limit(1)->get('admin_key');
         $key = '';
@@ -58,11 +57,9 @@
         }
     ?>
 
-    <div class="container" >
-        <!-- style=" width:auto;" -->
+    <div class="text-center" >
         <h1><?php echo translate($key); ?></h1>
-        <!--<h2>Rent from people in 38,368 cities and 192 countries.</h2>-->
-        <form id="search_form" class="custom show-search-options position-left" action="<?php echo site_url('search'); ?>" method ="post">
+        <form id="search_form" class="custom show-search-options" action="<?php echo site_url('search'); ?>" method ="post">
             <div class="input-wrapper">
                 <input id="location" style="width: 350px;" class="location" type="text" value="<?php echo translate("Where_do_you_want_to_go"); ?>" name="location" autocomplete="off" onblur="if (this.value == '') {
                             this.value = '<?php echo translate("Where_do_you_want_to_go"); ?>';
@@ -122,10 +119,13 @@
         </form>
     </div>
 </div>
-<div class="mid_banner_cont">
+
+<div class="mid_banner_cont text-center">
     <div id="mid_cont" class="midpos">
-        <h1> <?php echo translate("Neighborhood Guides"); ?> </h1>
-        <p> <?php echo translate("Not_sure"); ?> </p>
+        <div class="text-center">
+            <h1> <?php echo translate("Neighborhood Guides"); ?> </h1>
+            <p> <?php echo translate("Not_sure"); ?> </p>
+        </div>
         <ul class="recent_view clearfix">
             <?php
                 if (isset($cities))
@@ -187,27 +187,33 @@
                 echo translate("No Neighbourhood Places");
             }
         ?>
-    </div></div>
-<div id="list_home">
-
-    <div class="travel">
-        <h3> <?php echo translate("Travel"); ?> </h3>
-        <p> <?php echo translate("From_apartments"); ?></p>
-        <a href="<?php echo site_url('pages/view/travel'); ?>"> <?php echo translate("See most booked"); ?> <span> >> </span> </a>
-    </div>
-
-    <div class="host">
-        <h3> <?php echo translate("Host"); ?>  </h3>
-        <p>  <?php echo translate("Renting_out"); ?> </p>
-        <a href="<?php echo site_url('pages/view/why_host'); ?>"> <?php echo translate("Learn_more"); ?> >> </a>
-    </div>
-
-    <div class="work">
-        <h3> <?php echo translate("How It Works"); ?> </h3>
-        <p> <?php echo translate("From_our"); ?></p>
-        <a href="<?php echo site_url('info/how_it_works'); ?>"> <?php echo translate("Visit the trust & safety center"); ?> >> </a>
     </div>
 </div>
+
+<div id="list_home">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 text-left">
+                <div class="col-md-4">
+                    <h3> <?php echo translate("Travel"); ?> </h3>
+                    <p> <?php echo translate("From_apartments"); ?></p>
+                    <a href="<?php echo site_url('pages/view/travel'); ?>"> <?php echo translate("See most booked"); ?> <span> >> </span> </a>
+                </div>
+
+                <div class="col-md-4">
+                    <h3> <?php echo translate("Host"); ?>  </h3>
+                    <p>  <?php echo translate("Renting_out"); ?> </p>
+                    <a href="<?php echo site_url('pages/view/why_host'); ?>"> <?php echo translate("Learn_more"); ?> >> </a>
+                </div>
+
+                <div class="col-md-4">
+                    <h3> <?php echo translate("How It Works"); ?> </h3>
+                    <p> <?php echo translate("From_our"); ?></p>
+                    <a href="<?php echo site_url('info/how_it_works'); ?>"> <?php echo translate("Visit the trust & safety center"); ?> >> </a>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
 <!--end air-->
 <script>
