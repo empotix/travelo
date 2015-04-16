@@ -85,7 +85,7 @@ button.button:active span span{background:url(images/button.png) no-repeat 100% 
 #View_Faq .Box_Head h2{color:#f62792;padding:10px;-webkit-padding-before:3px;font:400 47px/48px "SignPainter-HouseScript"}
 #View_Pages .Box_Head .Box_Head_Right{position:absolute;right:10px;top:0;position:absolute;right:10px;top:0}
 #View_Pages h2{color:#f62792;padding:0 0 0 22px;font:400 47px/52px "SignPainter-HouseScript"}
-.Box_Head{background:url(images/box_head_bg.png) repeat-x center top;-moz-border-radius:6px 6px 0 0;-webkit-border-radius:6px 6px 0 0;-khtml-border-radius:6px 6px 0 0;border-radius:6px 6px 0 0;border:1px solid #c3c3c3;background:url(images/box_head_bg.png) repeat-x center top;}
+.Box_Head{background:url(images/box_head_bg.png) repeat-x center top;-moz-border-radius:6px 6px 0 0;-webkit-border-radius:6px 6px 0 0;-khtml-border-radius:6px 6px 0 0;border-radius:6px 6px 0 0;border:1px solid #c3c3c3;background:url(images/box_head_bg.png) repeat-x center top;min-height: 50px}
 .Box_Head1{background:#fafafa;border-bottom:1px solid #c3c3c3;border-top:1px solid #c3c3c3;height:45px;background:none repeat scroll 0 0 #fafafa;border-bottom:1px solid #c3c3c3;border-top:1px solid #c3c3c3;height:45px}
 .Box_Head1 h2{color:#515253;font-size:16px;padding:0 0 0 10px;line-height:36px;color:#515253;font-size:16px;padding:0 0 0 10px;line-height:36px}
 .Box_First{margin:10px 0!important;margin:10px 0!important}
@@ -716,15 +716,15 @@ ul.sub-help{display:none}
 .doller_symbol{color:#fff;font-size:23px;position:relative;top:-65px}
 .price{color:#fff;font-size:25px;text-shadow:0 -1px 1px #fff;z-index:1}
 .pernight_doller{color:#fff;font-size:11px;position:relative;text-shadow:0 -1px 1px #000;top:-61px}
-.need_top_part{background:url(../../../images/bar-bg.jpg) no-repeat center top #f7f7f7;display:block;margin:0 auto;text-align:center;color:#fff;padding:40px 0 0;font:14px Arial,Helvetica,sans-serif}
+.need_top_part{background:url(../../../../../images/bar-bg.jpg) no-repeat center top #f7f7f7;display:block;margin:0 auto;text-align:center;color:#fff;padding:40px 0 0;font:14px Arial,Helvetica,sans-serif}
 .need_top_part b{color:#fff;padding-right:20px;font:14px Arial,Helvetica,sans-serif}
 .need_top_part a{color:#333;padding:0 10px 0 0;font:14px Arial,Helvetica,sans-serif}
 .need_top_part_b_whole{background:#c5edfe;padding:10px 0;margin:50px 0 0;border-bottom:1px solid #ccc;color:#333;font:12px Arial,Helvetica,sans-serif}
-.need_top_part_breadcrumb{width:1000px;margin:0 auto;text-align:left;color:#333;text-transform:uppercase;font:700 12px Arial,Helvetica,sans-serif}
+.need_top_part_breadcrumb{margin:0 auto;text-align:left;color:#333;text-transform:uppercase;font:700 12px Arial,Helvetica,sans-serif}
 .need_top_part_breadcrumb span{padding-left:10px;color:#333;text-transform:uppercase;font:700 12px Arial,Helvetica,sans-serif}
 .need_top_part_breadcrumb a{text-align:left;color:#6f6f6f;text-transform:uppercase;font:700 12px Arial,Helvetica,sans-serif}
 .need_top_part_breadcrumb a:hover{color:#6f6f6f;text-transform:uppercase;text-decoration:underline;font:700 12px Arial,Helvetica,sans-serif}
-.middle_part_whole{text-align:left;color:#fff;padding:0;margin:0}
+.middle_part_whole{text-align:left;color:#fff;padding:0;margin:0;display: inline-block;width: 100%}
 .middle_part_mid{width:1000px;margin:0 auto;padding:20px 0;background:#fff;color:#333;font:12px Arial,Helvetica,sans-serif}
 .mid_left{width:240px;margin:0;padding-right:30px;float:left}
 .mid_right{width:730px;margin:0;padding:0;float:left}
@@ -734,7 +734,7 @@ ul.need_back li a.select,ul.need_back li a.select:hover{background:#fff;color:#0
 ul.need_back li a.unselect,ul.need_back li a.select:hover{color:#333;font-size:12px;text-decoration:none;display:block}
 .mid_right h2{color:#6f6f6f;font-size:24px;margin-bottom:15px}
 .steps{background:#fff;border:1px solid #ccc;padding:15px;margin:5px 0 20px}
-.steps_l{float:left;width:500px;padding-right:10px}
+/*.steps_l{float:left;width:500px;padding-right:10px}*/
 .steps_l b{text-transform:uppercase;font-size:12px;color:#999;padding-bottom:5px}
 .steps_l p{font-size:14px;color:#999;padding:10px 0}
 .steps_l p b{font-size:15px;color:#000;padding-bottom:5px}
