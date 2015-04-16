@@ -729,7 +729,8 @@ ul.sub-help{display:none}
 .mid_left{width:240px;margin:0;padding-right:30px;float:left}
 .mid_right{width:730px;margin:0;padding:0;float:left}
 ul.need_back{margin:0;padding:0}
-ul.need_back li{margin:0;padding:10px 0 10px 10px;border:1px solid #ccc;display:block}
+ul.need_back li{margin:0;padding:10px 0 10px 10px;border:1px solid #ccc;display:block;border-bottom: none;}
+ul.need_back li:last-child{border-bottom:1px solid #ccc;}
 ul.need_back li a.select,ul.need_back li a.select:hover{background:#fff;color:#00b0ff;font-size:12px;text-decoration:none;font-weight:700;display:block}
 ul.need_back li a.unselect,ul.need_back li a.select:hover{color:#333;font-size:12px;text-decoration:none;display:block}
 .mid_right h2{color:#6f6f6f;font-size:24px;margin-bottom:15px}
