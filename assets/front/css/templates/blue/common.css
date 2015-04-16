@@ -721,7 +721,7 @@ ul.sub-help{display:none}
 .need_top_part a{color:#333;padding:0 10px 0 0;font:14px Arial,Helvetica,sans-serif}
 .need_top_part_b_whole{background:#c5edfe;padding:10px 0;margin:50px 0 0;border-bottom:1px solid #ccc;color:#333;font:12px Arial,Helvetica,sans-serif}
 .need_top_part_breadcrumb{margin:0 auto;text-align:left;color:#333;text-transform:uppercase;font:700 12px Arial,Helvetica,sans-serif}
-.need_top_part_breadcrumb span{padding-left:10px;color:#333;text-transform:uppercase;font:700 12px Arial,Helvetica,sans-serif}
+.need_top_part_breadcrumb span{color:#333;text-transform:uppercase;font:700 12px Arial,Helvetica,sans-serif}
 .need_top_part_breadcrumb a{text-align:left;color:#6f6f6f;text-transform:uppercase;font:700 12px Arial,Helvetica,sans-serif}
 .need_top_part_breadcrumb a:hover{color:#6f6f6f;text-transform:uppercase;text-decoration:underline;font:700 12px Arial,Helvetica,sans-serif}
 .middle_part_whole{text-align:left;color:#fff;padding:0;margin:0;display: inline-block;width: 100%}
