@@ -57,14 +57,14 @@
 /*.search-main-right{float:right;width:250px;margin:0!important}*/
 #map_options{background:#eeeee6;color:#2d2d2d;padding:8px;border-bottom:1px solid #a8a8a8;}
 #map_options label{vertical-align:text-bottom;padding-left:6px}
-.list_view #search_map,.photo_view #search_map{height:250px}
+.list_view #search_map,.photo_view #search_map{height:350px}
 .list_view #map_wrapper .Box_Content,.photo_view #map_wrapper .Box_Content{padding:10px}
 /*.list_view #map_wrapper #Mab_Big_Main,.photo_view #map_wrapper #Mab_Big_Main{width:248px!important}*/
 /*.list_view #map_wrapper,.photo_view #map_wrapper{width:260px;height:241px;margin:0 0 10px}*/
 .search_filter a.filter_header{overflow:hidden;display:block;padding:0 33px 0 0;text-decoration:none;color:#515253}
 ul.collapsable_filters .closed a.filter_toggle{background:-13px 0}
 .search_filter a.filter_toggle{width:13px;height:13px;position:absolute;right:15px;top:13px;background:url(images/blus_minus.png) no-repeat;cursor:pointer}
-.search_filter_content label{cursor:pointer;vertical-align:middle}
+.search_filter_content label{cursor:pointer;vertical-align:text-top}
 .search_filter_content input{cursor:pointer;vertical-align:middle}
 .search_filter_content li{padding:0}
 .search_filter_content{padding:10px}
@@ -121,9 +121,9 @@ div.photo_view .room_title a.name{max-width:160px;color:#1c9edc;font-size:12px;l
 .map_view #search_filters_toggle{height:55px;width:33px;position:absolute;overflow:hidden;z-index:1000;top:177px;display:block;right:270px;background:url(images/map_toggle_arrow.png) no-repeat -0 -64px;cursor:pointer}
 .map_view #search_filters_toggle:hover{}
 .map_view #first_time_map_question{left:478px;padding:0 17px 0 0;top:5px;width:233px}
-#first_time_map_question{position:absolute;top:25px;width:224px;left:5px;text-align:center;padding:8px 0 0;overflow:hidden}
+#first_time_map_question{position:absolute;top:25px;width:224px;left:-10px;text-align:center;padding:8px 0 0;overflow:hidden}
 #first_time_map_question_content{background:#fff;padding:10px;border:1px solid #707070;overflow:hidden}
-#first_time_map_question_arrow{position:absolute;left:29px;top:0;width:18px;height:9px;background:url(images/firsttime_map_que_arrow1.png) no-repeat}
+#first_time_map_question_arrow{position:absolute;left:16px;top:0;width:18px;height:9px;background:url(images/firsttime_map_que_arrow1.png) no-repeat}
 #first_time_map_question p{color:#3d3d3d;font-size:13px;text-align:left;float:left;width:202px;padding-bottom:10px}
 #first_time_map_question a{font-size:14px;font-weight:700;width:93px;padding-right:8px;text-align:center;display:block;float:left;color:#1d9edc}
 .map_view .search-main-left{width:960px;min-height:0}
@@ -138,7 +138,7 @@ div.photo_view .room_title a.name{max-width:160px;color:#1c9edc;font-size:12px;l
 .map_view #Mab_Big_Main.Box{border-radius:0 0 6px 6px;border-top:none}
 #blank_state{background:url(images/blank_state_bg.png) repeat-x;height:350px;overflow:hidden}
 #blank_state_molecule{float:left;width:143px;background:url(images/blank_state_mod_map.png) no-repeat 22px 0;height:99px}
-#blank_state_text{margin:50px 0 0 25px;float:left;width:600px}
+#blank_state_text{margin:50px 0 0 25px;}
 #blank_state h3{color:#c1c1c1;font-size:32px;font-weight:700;line-height:normal;text-shadow:1px 1px 1px #fff}
 #blank_state p{font-size:18px;color:#c2c2c2}
 #map_message h3{letter-spacing:-.1px;font-size:24px;font-weight:700;color:#fff}

@@ -247,7 +247,7 @@
                             <div id="map_options"><input type="checkbox" name="redo_search_in_map" id="redo_search_in_map" /><label for="redo_search_in_map"><?php echo translate("Redo search in map"); ?></label></div>
 
                             <div id="map_wrapper">
-                                <p class="zoom_info" style="color: #1D95CB;"><?php echo translate("Left double click for zoom in and Right double click for zoom out."); ?></p>
+                                <p class="zoom_info text-center"><?php echo translate("Left double click for zoom in and Right double click for zoom out."); ?></p>
                                 <div class="Box" id="Mab_Big_Main">
                                     <div class="Box_Content">
                                         <div id="search_map"></div>

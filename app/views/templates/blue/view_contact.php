@@ -11,28 +11,32 @@
             <div class="clearfix" id="Contact_content">
 
                 <div class="clsFloatLeft" id="Contact_Left">
-                    <p><label><?php echo translate("Phone Support"); ?></label><?php if (isset($row->phone) && $row->phone != '')
-        echo $row->phone;
-    else
-        echo "-";
-?></p>
-                    <p><label><?php echo translate("Email Support"); ?></label><?php if (isset($row->email) && $row->email != '')
-                            echo $row->email;
-                        else
-                            echo "-"
-                            ?></p>
-                    <p><label><?php echo translate("Meet us at"); ?></label><?php if (isset($row->name) && $row->name != '')
-                        echo $row->name;
-                    else
-                        echo "-"
+                    <p><label><?php echo translate("Phone Support"); ?></label><?php
+                            if (isset($row->phone) && $row->phone != '')
+                                echo $row->phone;
+                            else
+                                echo "-";
                         ?></p>
-<?php if (isset($row->street)) echo '<p><label>&nbsp;</label>' . $row->street . '</p>'; ?>
-<?php if (isset($row->city)) echo '<p><label>&nbsp;</label>' . $row->city . '</p>'; ?>
-                    <p><label>&nbsp;</label><?php if (isset($row->state)) echo $row->state; ?>&nbsp;-&nbsp;<?php if (isset($row->pincode) && $row->pincode != '0')
-        echo $row->pincode;
-    else
-        "-";
-?></p>
+                    <p><label><?php echo translate("Email Support"); ?></label><?php
+                            if (isset($row->email) && $row->email != '')
+                                echo $row->email;
+                            else
+                                echo "-"
+                                ?></p>
+                    <p><label><?php echo translate("Meet us at"); ?></label><?php
+                            if (isset($row->name) && $row->name != '')
+                                echo $row->name;
+                            else
+                                echo "-"
+                                ?></p>
+                        <?php if (isset($row->street)) echo '<p><label>&nbsp;</label>' . $row->street . '</p>'; ?>
+                        <?php if (isset($row->city)) echo '<p><label>&nbsp;</label>' . $row->city . '</p>'; ?>
+                    <p><label>&nbsp;</label><?php if (isset($row->state)) echo $row->state; ?>&nbsp;-&nbsp;<?php
+                            if (isset($row->pincode) && $row->pincode != '0')
+                                echo $row->pincode;
+                            else
+                                "-";
+                        ?></p>
 <?php if (isset($row->country)) echo '<p><label>&nbsp;</label>' . $row->country . '</p>'; ?>
                 </div>
                 <div class="clsFloatRight" id="Contact_Right">
@@ -44,7 +48,7 @@
 
                         <p>
                             <label class="inner_text" for="name"><?php echo translate("Name"); ?><sup>*</sup></label><input id="name" name="name" placeholder="Name" type="text" value="<?php echo set_value('name'); ?>" />
-<?php echo form_error('name'); ?>
+                            <?php echo form_error('name'); ?>
                         </p>
 
                         <p>
