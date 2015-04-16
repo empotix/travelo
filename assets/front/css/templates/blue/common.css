@@ -59,7 +59,7 @@ button.button:hover span{background:url(images/button.png) no-repeat 0 -38px;bac
 button.button:hover span span{background:url(images/button.png) no-repeat 100% -38px;background:url(images/button.png) no-repeat scroll 100% -38px transparent}
 button.button:active span{background:url(images/button.png) no-repeat 0 -76px;background:url(images/button.png) no-repeat scroll 0 -76px transparent}
 button.button:active span span{background:url(images/button.png) no-repeat 100% -76px;background:url(images/button.png) no-repeat scroll 100% -76px transparent}
-.container_bg{background:#f0f0f0;width:960px;min-height:375px;margin:0 auto;text-align:left;padding:10px 10px 5px;-moz-border-radius:10px;-webkit-border-radius:10px;-khtml-border-radius:10px;border-radius:10px;background:#f0f0f0;width:960px;min-height:375px;margin:0 auto 0;text-align:left;padding:10px 10px 5px;-moz-border-radius:10px;-webkit-border-radius:10px;-khtml-border-radius:10px;border-radius:10px}
+.container_bg{background:#f0f0f0;min-height:375px;margin:0 auto;padding:10px 10px 5px;-moz-border-radius:10px;-webkit-border-radius:10px;-khtml-border-radius:10px;border-radius:10px;}
 .container_bg1{border:1px solid #e1e1e1;background:url(images/sign_bg.png) center top #fff;width:960px;min-height:500px;padding:10px 10px 0;margin:15px auto 0;text-align:left;box-shadow:inset 0 0 .2em hsla(0,0,100%,.3),inset 0 0 .2em hsla(0,0,100%,.3),0 1px 10px rgba(0,0,0,.2);-o-box-shadow:inset 0 0 .2em hsla(0,0,100%,.3),inset 0 0 .2em hsla(0,0,100%,.3),0 1px 10px rgba(0,0,0,.2);-moz-box-shadow:inset 0 0 .2em hsla(0,0,100%,.3),inset 0 0 .2em hsla(0,0,100%,.3),0 1px 10px rgba(0,0,0,.2);-webkit-box-shadow:inset 0 0 .2em hsla(0,0,100%,.3),inset 0 0 .2em hsla(0,0,100%,.3),0 1px 10px rgba(0,0,0,.2);-moz-border-radius:10px;-webkit-border-radius:10px;-khtml-border-radius:10px;border-radius:10px;border:1px solid #e1e1e1;background:#fff url(images/sign_bg.png) repeat center top;width:960px;min-height:500px;padding:10px 10px 0;margin:15px auto 0;text-align:left;box-shadow:inset 0 0 .2em hsla(0,0,100%,.3),inset 0 0 .2em hsla(0,0,100%,.3),0 1px 10px rgba(0,0,0,.2);-o-box-shadow:inset 0 0 .2em hsla(0,0,100%,.3),inset 0 0 .2em hsla(0,0,100%,.3),0 1px 10px rgba(0,0,0,.2);-moz-box-shadow:inset 0 0 .2em hsla(0,0,100%,.3),inset 0 0 .2em hsla(0,0,100%,.3),0 1px 10px rgba(0,0,0,.2);-webkit-box-shadow:inset 0 0 .2em hsla(0,0,100%,.3),inset 0 0 .2em hsla(0,0,100%,.3),0 1px 10px rgba(0,0,0,.2);-moz-border-radius:10px;-webkit-border-radius:10px;-khtml-border-radius:10px;border-radius:10px}
 .container_bg_listpage{width:960px;min-height:375px;margin:0 auto;text-align:left;padding:10px 10px 5px;width:960px;min-height:375px;margin:0 auto 0;text-align:left;padding:10px 10px 5px}
 #HMain_Left{width:667px;width:667px}
@@ -85,13 +85,13 @@ button.button:active span span{background:url(images/button.png) no-repeat 100% 
 #View_Faq .Box_Head h2{color:#f62792;padding:10px;-webkit-padding-before:3px;font:400 47px/48px "SignPainter-HouseScript"}
 #View_Pages .Box_Head .Box_Head_Right{position:absolute;right:10px;top:0;position:absolute;right:10px;top:0}
 #View_Pages h2{color:#f62792;padding:0 0 0 22px;font:400 47px/52px "SignPainter-HouseScript"}
-.Box_Head{background:url(images/box_head_bg.png) repeat-x center top;height:49px;-moz-border-radius:6px 6px 0 0;-webkit-border-radius:6px 6px 0 0;-khtml-border-radius:6px 6px 0 0;border-radius:6px 6px 0 0;position:relative;border:1px solid #c3c3c3;min-height:62px;background:url(images/box_head_bg.png) repeat-x center top;height:49px;-moz-border-radius:6px 6px 0 0;-webkit-border-radius:6px 6px 0 0;-khtml-border-radius:6px 6px 0 0;border-radius:6px 6px 0 0;position:relative;border:1px solid #c3c3c3;min-height:49px}
+.Box_Head{background:url(images/box_head_bg.png) repeat-x center top;-moz-border-radius:6px 6px 0 0;-webkit-border-radius:6px 6px 0 0;-khtml-border-radius:6px 6px 0 0;border-radius:6px 6px 0 0;border:1px solid #c3c3c3;background:url(images/box_head_bg.png) repeat-x center top;}
 .Box_Head1{background:#fafafa;border-bottom:1px solid #c3c3c3;border-top:1px solid #c3c3c3;height:45px;background:none repeat scroll 0 0 #fafafa;border-bottom:1px solid #c3c3c3;border-top:1px solid #c3c3c3;height:45px}
 .Box_Head1 h2{color:#515253;font-size:16px;padding:0 0 0 10px;line-height:36px;color:#515253;font-size:16px;padding:0 0 0 10px;line-height:36px}
 .Box_First{margin:10px 0!important;margin:10px 0!important}
 .Box{-moz-border-radius:6px;-webkit-border-radius:6px;-khtml-border-radius:6px;border-radius:6px;margin:0 0 10px;background:#fff;box-shadow:0 3px 3px 0 rgba(0,0,0,.15);-moz-border-radius:6px;-webkit-border-radius:6px;-khtml-border-radius:6px;border-radius:6px;margin:0 0 10px 0;background:#fff;box-shadow:0 3px 3px 0 rgba(0,0,0,.15)}
 .Box1{border:1px solid #efefef;-moz-border-radius:6px;-webkit-border-radius:6px;-khtml-border-radius:6px;border-radius:6px;margin:0 0 10px;background:url(images/box1_bg.png) repeat-x center top #fff;border:1px solid #efefef;-moz-border-radius:6px;-webkit-border-radius:6px;-khtml-border-radius:6px;border-radius:6px;margin:0 0 10px 0;background:#fff url(images/box1_bg.png) repeat-x center top}
-.Box_Content{padding:10px;padding:10px 10px 10px 10px}
+.Box_Content{padding:10px;display: inline-block;width: 100%}
 .Box_Head .Box_Head_Right{position:absolute;right:10px;top:0;position:absolute;right:10px;top:0}
 #HMost_View_Blk .clsMost_Link li{background:url(images/nav_border.png) repeat-y right top;float:left;height:36px;line-height:36px;background:url(images/nav_border.png) repeat-y scroll right top transparent;float:left;height:36px;line-height:36px}
 #HMost_View_Blk .clsMost_Link li a{color:#5c5c5c;display:block;font-weight:700;padding:0 15px;text-shadow:1px 1px 1px #fff;text-transform:uppercase;color:#5c5c5c;display:block;font-weight:700;padding:0 15px;text-shadow:1px 1px 1px #fff;text-transform:uppercase}
@@ -108,7 +108,7 @@ button.button:active span span{background:url(images/button.png) no-repeat 100% 
 .Sub_Most_View_Rgt p{padding:0 0 9px;padding:0 0 9px 0}
 #HMost_View_Blk .clsSub_Most_View_Blk{float:left;padding:5px 12px 12px 0;float:left;padding:5px 12px 12px 0}
 #HMain_Right{width:285px;width:285px}
-.Box_Head h2{color:#b5b5b5;font-size:16px;padding:8px 0 0 10px;line-height:36px;font-weight:400}
+.Box_Head h2{color:#b5b5b5;font-size:16px;padding:10px;font-weight:400}
 .clsTopLinks_List{width:265px;width:265px}
 #HTop_Links_Box .clsTopLinks_Left{width:120px;width:120px}
 #HTop_Links_Box .clsTopLinks_Right{width:120px;width:120px}
@@ -205,11 +205,11 @@ button.button:active span span{background:url(images/button.png) no-repeat 100% 
 .clsSign_Email p{padding:0 0 10px;color:red;padding:0 0 10px 0;color:red}
 clsSign_Email .Sign_Reminder_Me{margin:0 0 0 15px;margin:0 0 0 15px}
 #section_signup span.help,#section_signin span.help{margin:0 0 10px 12px;color:red;display:block;margin:0 0 10px 12px;color:red;display:block}
-#View_Contact #Contact_content #Contact_Left{width:400px;width:400px}
-#View_Contact #Contact_content #Contact_Right{width:470px;border-left:1px solid #efefef;padding:0 0 0 20px;width:470px;border-left:1px solid #efefef;padding:0 0 0 20px}
+/*#View_Contact #Contact_content #Contact_Left{width:400px;width:400px}*/
+#View_Contact #Contact_content #Contact_Right{border-left:1px solid #efefef;padding:0 0 0 20px;}
 #View_Contact #Contact_content{margin:0 0 10px;margin:0 0 10px 0}
 #View_Contact #Contact_content #Contact_Left p,#View_Contact #Contact_content #Contact_Right p{clear:both;padding:0 0 10px;clear:both;padding:0 0 10px 0}
-#View_Contact #Contact_content #Contact_Left p label{float:left;font-weight:700;width:115px;display:block;float:left;font-weight:700;width:115px;display:block}
+#View_Contact #Contact_content #Contact_Left p label{float:left;font-weight:700;width:100px;display:block;}
 #View_Contact #Contact_content #Contact_Right p label{float:left;font-weight:700;width:115px;padding:0 0 10px;display:block;float:left;font-size:13px;font-weight:700;width:115px;padding:0 0 10px 0;display:block}
 #View_HowIt .How_It_VideoBg{background:url(images/howitwork_blue.png) no-repeat;height:427px;padding:30px 57px;width:886px;margin:-2px auto 0;background:url(images/howitwork_blue.png) no-repeat 0 0;height:427px;padding:30px 57px;width:886px;margin:-2px auto 0}
 .How_It_VideoBg div#mediaplayer_wrapper object{border-radius:5px;-webkit-border-radius:5px;-moz-border-radius:5px;-o-border-radius:5px;border-radius:5px;-webkit-border-radius:5px;-moz-border-radius:5px;-o-border-radius:5px}
@@ -252,7 +252,7 @@ a.tooltip{cursor:help;cursor:help}
 #element_to_pop_up .messagearea p.reuse{clear:both;clear:both}
 #element_to_pop_up p input[type="text"]{background:#fff;border:1px solid #d2d2d2;border-radius:.3em;box-shadow:1px 1px 1px 0 rgba(0,0,0,.1) inset;padding:2px .4em;width:80px;margin:0;width:100px!important;background:none repeat scroll 0 0 #fff;border:1px solid #d2d2d2;border-radius:.3em .3em .3em .3em;box-shadow:1px 1px 1px 0 rgba(0,0,0,.1) inset;padding:2px .4em;width:80px;margin:0;width:100px!important}
 #element_to_pop_up .messagearea textarea{clear:both;clear:both}
-#message{width:400px;resize:none;padding-left:10px;width:400px;resize:none;padding-left:10px}
+#message{resize:none;}
 .messagearea textarea{width:500px!important;width:500px!important}
 #element_to_pop_up .send{float:right;clear:both;float:right;clear:both}
 #element_to_pop_up .send button.button{background:none;border:0 none;width:auto;background:none repeat scroll 0 0 transparent;border:0 none;width:auto}

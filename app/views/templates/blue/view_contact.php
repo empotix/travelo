@@ -1,4 +1,5 @@
-
+<div class="container">
+<div class="row">
 <div id="View_Contact" class="container_bg">
     <!-- BEGIN STATIC LAYOUT -->
 
@@ -8,9 +9,9 @@
         </div>
         <div class="Box_Content">
 
-            <div class="clearfix" id="Contact_content">
+            <div class="clearfix col-md-12" id="Contact_content">
 
-                <div class="clsFloatLeft" id="Contact_Left">
+                <div class="col-md-6" id="Contact_Left">
                     <p><label><?php echo translate("Phone Support"); ?></label><?php
                             if (isset($row->phone) && $row->phone != '')
                                 echo $row->phone;
@@ -39,11 +40,9 @@
                         ?></p>
 <?php if (isset($row->country)) echo '<p><label>&nbsp;</label>' . $row->country . '</p>'; ?>
                 </div>
-                <div class="clsFloatRight" id="Contact_Right">
+                <div class="col-md-6" id="Contact_Right">
 
                     <!-- Feedback Form start -->
-
-
                     <form action="<?php echo site_url('pages/contact'); ?>" id="submit_message_form" method="post">                
 
                         <p>
@@ -64,7 +63,7 @@
 
                         <p>
                             <label>&nbsp;</label>
-                            <button id="message_submit" name="commit" class="button1" type="submit"><span><span><?php echo translate("Send"); ?></span></span></button>
+                            <button id="message_submit" name="commit" class="btn large" type="submit"><span><span><?php echo translate("Send"); ?></span></span></button>
                         </p>
                     </form>
 
@@ -79,4 +78,6 @@
 
     </div>
     <!-- END STATIC LAYOUT -->
+</div>
+</div>
 </div>
