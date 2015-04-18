@@ -1,18 +1,5 @@
 <?php
 
-    /**
-     * DROPinn Rooms Controller Class
-     *
-     * Its have the functionality of rooms display and edit section
-     *
-     * @package		Dropinn
-     * @subpackage	Controllers
-     * @category	Rooms 
-     * @author		Cogzidel Product Team
-     * @version		Version 1.6
-     * @link		http://www.cogzidel.com
-
-     */
     if (!defined('BASEPATH'))
         exit('No direct script access allowed');
 
