@@ -331,7 +331,7 @@
                                                         ?>
                                                     </span> </li>
                                             <?php } ?>
-                  <!--<li class="clearfix round_bottom"><span class="property"> <?php echo translate("Cancellation:"); ?> </span><span class="value"> <a target="_blank" href="<?php echo site_url('pages/cancellation_policy'); ?>"><?php echo translate("Flexible"); ?> </a></span></li>-->
+          <!--<li class="clearfix round_bottom"><span class="property"> <?php echo translate("Cancellation:"); ?> </span><span class="value"> <a target="_blank" href="<?php echo site_url('pages/cancellation_policy'); ?>"><?php echo translate("Flexible"); ?> </a></span></li>-->
                                         <li class="clearfix round_bottom"><span class="property"> <?php echo translate("Cancellation:"); ?> </span><span class="value"> 
                                                 <?php
                                                     if ($list->cancellation_policy != '')
