@@ -329,7 +329,7 @@ form{margin:0 0 18px;border-color:#fff #fff #e1e1e1;border-style:solid;border-wi
 input:-moz-placeholder{color:#999;color:#999}
 #enter_location_error_message{background:hsla(0,0,100%,.8);border-radius:0 0 3px 3px;left:6px;padding:5px 8px;position:absolute;top:50px;width:356px;background:none repeat scroll 0 0 hsla(0,0,100%,.8);border-radius:0 0 3px 3px;left:6px;padding:5px 8px;position:absolute;top:50px;width:356px}
 .custom.selector,.search-area-icon{background:url(images/search_icons.png) no-repeat 1px 2px;display:block;height:20px;margin-top:-10px;position:absolute;right:6px;top:50%;width:24px;background:url(images/search_icons.png) no-repeat scroll 1px 2px transparent;display:block;height:20px;margin-top:-10px;position:absolute;right:6px;top:50%;width:24px}
-.search-area-icon-checkout{background-position:1px -18px;background:1px -18px}
+.search-area-icon-checkout{background-position:1px -18px;background-position:1px -18px}
 .custom-select-container{position:relative;position:relative}
 .custom.dropdown.small{width:115px;text-align:left;margin-top:15px;color:#393c3d!important;font-size:17px;font-weight:700;line-height:17px;margin-top:15px;padding:8px 3px 8px 14px!important;text-align:left;text-shadow:0 0 0}
 .search-area .dropdown{padding-bottom:7px;background-image:url(images/guest_bg.png);background-repeat:repeat-x;padding-bottom:7px;background:url(images/guest_bg.png) repeat-x}
@@ -564,7 +564,7 @@ a{cursor:pointer;text-decoration:none}
 .search-area .input-wrapper{float:left;margin-right:4px;position:relative}
 .search-area input[type="text"],.search-area .dropdown{border:1px solid #000;border-radius:3px;font-size:17px;padding:8px 12px;text-shadow:0 1px 1px #fff;border:1px solid #000;border-radius:3px 3px 3px 3px;font-size:17px;padding:8px 12px;text-shadow:0 1px 1px #fff;border:1px solid #000;border-radius:3px 3px 3px 3px;font-size:17px;padding:8px 12px;text-shadow:0 1px 1px #fff}
 .custom.dropdown{}
-.search-area input[type="text"],.search-area .dropdown{border:1px solid #000;border-radius:3px;color:#959595;padding:8px 12px;text-shadow:0 1px 1px #fff;background:#fff!important;box-shadow:0 0 0 transparent;behavior:url(/border-radius.htc);font:15px Helvetica Neue}
+.search-area input[type="text"],.search-area .dropdown{border:1px solid #000;border-radius:3px;color:#959595;padding:8px 12px;text-shadow:0 1px 1px #fff;background:#fff!important;box-shadow:0 0 0 transparent;behavior:url(/border-radius.htc);font:15px Helvetica Neue;min-width: 125px}
 input:focus,select:focus,textarea:focus{border-color:#00b0ff;box-shadow:0 1px 1px 0 rgba(0,0,0,.08) inset,0 0 2px 2px #ceeaf6;outline:0 none}
 #mid_cont>h1{text-align:left;font-size:24px;font-weight:700;margin-bottom:20px}
 #mid_cont>p{font-size:15px;text-align:left;margin:10px 0;font-size:18px;text-align:left;margin:10px 0}
