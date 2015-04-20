@@ -508,7 +508,8 @@ ul.new_sub_menu li{margin:10px 0;background:#fff;padding:10px 0 0 10px;width:200
 ul.new_sub_menu li form input{width:150px;padding:5px 10px;margin:0;width:150px;padding:5px 10px;margin:0}
 ul.new_sub_menu li a{width:200px;background:#fff;display:block;border-bottom:none;padding:10px 0 10px 10px;margin:0;width:200px;background:#fff;display:block;border-bottom:none;padding:10px 0 10px 10px;margin:0}
 ul.new_sub_menu li:hover{margin:10px 0;background:#00b0ff;padding:10px 0 0 10px;width:200px;border-bottom:1px solid #999;color:#fff;margin:10px 0;background:#00b0ff;padding:10px 0 0 10px;width:200px;border-bottom:1px solid #999;color:#fff}
-.menu_help{height:48px;width:96px;height:48px;margin:0;width:105px}
+/*.menu_help{height:48px;width:96px;height:48px;margin:0;width:105px}*/
+#header > div{max-height: 50px}
 .menu_help li:hover>ul{display:block}
 .header_content a:hover{color:#1d95cb!important}
 .menu_help ul li:last-child a{border:none;border:none}
@@ -663,14 +664,15 @@ ul.popular_whole_img li img:hover{width:100%;border:1px solid #ff3fb4}
 .sub-help li:hover{color:#fff!important;background:#00b0ff}
 .sub-help li:hover a{color:#fff!important;background:#00b0ff!important}
 .sub-help li a{border-bottom:1px solid #eee;color:#393c3d;display:inline-block;font-size:13px!important;font-weight:700;padding:8px 0 8px 10px;text-align:left;text-decoration:none;text-shadow:none;text-transform:none;width:93%}
-.header_content li{position:relative;padding:0}
+.header_content li{position:relative;padding:0;display: inline-block;vertical-align: top;}
 .header_content li:hover{color:#fff!important}
+.header_content > li{padding:10px;}
 .clearfix.clsFloatRight.header_content>li:hover{color:#1d95cb!important;cursor:pointer}
 .help:hover{border-left-color:#c1c1c1!important;border-right-color:#c1c1c1!important;box-shadow:0 0 6px rgba(0,0,0,.1) inset!important;color:#000!important;background:#f5f5f5!important}
 .sub-help{position:absolute;padding:0;right:0;width:150px;background:#fff;text-shadow:0 1px 0 #fff;top:46px;box-shadow:0 2px 10px rgba(0,0,0,.1),0 0 0 #000;border:1px solid #d0d0d0;z-index:9999}
 ul.sub-help{display:none}
 .header_content li:hover ul.sub-help{display:block}
-.header_content{margin:0}
+.header_content{margin:0;display: inline-block;width: 100%}
 .help-dropdown>.sub-help{display:block}
 .yellow span:hover{color:#fff}
 .landette{-moz-border-bottom-colors:none;-moz-border-left-colors:none;-moz-border-right-colors:none;-moz-border-top-colors:none;background:-moz-linear-gradient(center top,#FFFFFF 0%,#F9F9F9 50%,#F1F1F1 50%,#EFEFEF 100%) repeat scroll 0 0 transparent;background:-webkit-gradient(linear,left top,left bottom,color-stop(0%,#fff),color-stop(50%,#f9f9f9),color-stop(50%,#f1f1f1),color-stop(100%,#efefef));border-color:-moz-use-text-color #909a9c #909a9c;border-image:none;border-right:1px solid #909a9c;border-style:none solid solid;border-width:medium 1px 1px;box-shadow:0 1px 6px rgba(0,0,0,.3),0 0 30px #fff inset;margin-top:-17px;padding:15px 0;position:relative;text-align:center;width:1015px}
@@ -962,7 +964,7 @@ div#crosshair{position:absolute;top:192px;height:19px;width:19px;left:50%;margin
 .menu-browse{color:#5a5a5a;font-size:11px;font-weight:700;line-height:50px;padding:30px 26px 18px 15px!important;text-decoration:none;text-transform:uppercase}
 .menu-browse:hover{background:#f5f5f5;border-left-color:#c1c1c1!important;border-right-color:#c1c1c1!important;box-shadow:0 0 6px rgba(0,0,0,.1) inset;color:#1d95cb!important;text-decoration:none}
 .menu_help ul li a:hover{background:#00b0ff;color:#fff!important}
-.hel_in>a{color:#5a5a5a;font-size:11px;font-weight:700;line-height:49px;padding:17px 20px 20px 10px;text-align:left;text-decoration:none;text-transform:uppercase}
+.hel_in>a{color:#5a5a5a;font-size:11px;font-weight:700;text-decoration:none;text-transform:uppercase}
 .menu li:first-child:hover>a{background:#f5f5f5;border-left-color:#c1c1c1!important;border-right-color:#c1c1c1!important;box-shadow:0 0 6px rgba(0,0,0,.1) inset;color:#1d95cb;text-decoration:none}
 .bya>a:hover{background:#00b0ff!important;color:#fff!important}
 .mid_banner_cont{border:1px solid #dbdbdb;border-radius:2px;text-align:center;background:#efefef}
@@ -1008,3 +1010,7 @@ li.photo_img_sub{padding-left:12.5px;padding-right:12.5px;width:29%;float:left;m
 .delete-photo-btn:hover{opacity:1;cursor:pointer}
 #guests>option{padding:5px;font-size:12px}
 footer{border-top: 1px solid #dbdbdb}
+
+@media (max-width: 480px){
+    .searchbox{max-width: 148px;}
+}

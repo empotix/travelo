@@ -620,7 +620,9 @@
                                             <?php echo translate("Close"); ?>
                                         </label>
                                     </div>
-                                <?php } ?>
+                                    <?php
+                                }
+                            ?>
                         </form>
                     </div>
                     <div style="display: inline-block" class="hidden-xs">
@@ -644,31 +646,26 @@
                     </div>
                 </div>
 
-                <div class="headerright">
-                    <ul class="clearfix clsFloatRight header_content">
-
+                <div class="headerright col-md-4">
+                    <ul class="clearfix header_content">
                         <?php
-                            if (0):
+                            if (0)
+                            {
                                 if ($this->session->userdata('image_url') != '')
                                 {
                                     $src = $this->session->userdata('image_url');
                                 }
                                 else
                                 {
-
                                     $src = $this->Gallery->profilepic($this->dx_auth->get_user_id(), 2);
                                 }
-                                ?>
-                                <?php
+
                                 if ($this->dx_auth->is_logged_in())
                                 {
                                     $via_login = $this->db->where('id', $this->dx_auth->get_user_id())->get('users')->row()->via_login;
                                 }
                                 ?>
-                                <li class="help"><a href="#"><?php
-                                        echo /* translate("Hello"). */'&nbsp&nbsp' . "<img src='" . $src . "'width='30' height='30'/>"
-                                        . '&nbsp&nbsp' . $name;
-                                        ?></a>
+                                <li class="help"><a href="#"><?php echo '&nbsp&nbsp' . "<img src='" . $src . "'width='30' height='30'/>" . '&nbsp&nbsp' . $name; ?></a>
                                     <ul class="sub-help">
                                         <li><?php echo anchor('home/dashboard', translate("Dashboard")); ?></li>
                                         <li><?php echo anchor('hosting', translate("Your Listings")); ?></li>
@@ -676,10 +673,14 @@
                                         <li><?php echo anchor('account/mywishlist', translate("Wishlists")); ?></li>
                                         <li><?php echo anchor('users/edit', translate("Edit Profile")); ?></li>
                                         <li><?php echo anchor('account', translate("Account")); ?></li>
-                                        <?php if ($this->dx_auth->is_admin()): ?>
-                                            <li><?php echo anchor('administrator', translate("Admin Panel"), array("target" => "_blank")); ?></li>
-                                        <?php endif; ?>
                                         <?php
+                                        if ($this->dx_auth->is_admin())
+                                        {
+                                            ?>
+                                            <li><?php echo anchor('administrator', translate("Admin Panel"), array("target" => "_blank")); ?></li>
+                                            <?php
+                                        }
+
                                         if ($via_login != 'facebook')
                                         {
                                             ?>
@@ -690,41 +691,39 @@
                                         {
                                             ?>
                                             <li><a id="logout" onclick="logout();"><?php echo translate("Logout"); ?></a></li>
-                                        <?php } ?>
+                                            <?php
+                                        }
+                                        ?>
                                     </ul>
-
                                 </li>
-                            </ul>
-                        </div>
+<!--                            </ul>
+                        </div>-->
                         <?php
-                    elseif (!($this->dx_auth->is_logged_in())):
+                    }
+                    elseif (!($this->dx_auth->is_logged_in()))
+                    {
                         ?>
-
                         <li><?php echo anchor('users/signup', translate("Sign Up")); ?></li>
                         <li><?php echo anchor('users/signin', translate("Sign In")); ?></li>
                         <?php
-                    else:
+                    }
+                    else
+                    {
                         if ($this->session->userdata('image_url') != '')
                         {
                             $src = $this->session->userdata('image_url');
                         }
                         else
                         {
-
                             $src = $this->Gallery->profilepic($this->dx_auth->get_user_id(), 2);
                         }
-                        ?>
-                        <?php
+
                         if ($this->dx_auth->is_logged_in())
                         {
                             $via_login = $this->db->where('id', $this->dx_auth->get_user_id())->get('users')->row()->via_login;
                         }
                         ?>
-                        <li class="help"><span><?php
-                                echo '&nbsp&nbsp' .
-                                "<img src='" . $src . "'width='30' height='30'/>"
-                                . '&nbsp&nbsp' . $name;
-                                ?></span>
+                        <li class="help"><span><?php echo '&nbsp&nbsp<img src="' . $src . '" width="30" height="30"/>&nbsp&nbsp' . $name; ?></span>
                             <ul class="sub-help">
                                 <li><?php echo anchor('home/dashboard', translate("Dashboard")); ?></li>
                                 <li><?php echo anchor('hosting', translate("Your Listings")); ?></li>
@@ -732,10 +731,14 @@
                                 <li><?php echo anchor('account/mywishlist', translate("Wishlists")); ?></li>
                                 <li><?php echo anchor('users/edit', translate("Edit Profile")); ?></li>
                                 <li><?php echo anchor('account', translate("Account")); ?></li>
-                                <?php if ($this->dx_auth->is_admin()): ?>
-                                    <li><?php echo anchor('administrator', translate("Admin Panel"), array("target" => "_blank")); ?></li>
-                                <?php endif; ?>
                                 <?php
+                                if ($this->dx_auth->is_admin())
+                                {
+                                    ?>
+                                    <li><?php echo anchor('administrator', translate("Admin Panel"), array("target" => "_blank")); ?></li>
+                                    <?php
+                                }
+
                                 if ($via_login != 'facebook')
                                 {
                                     ?>
@@ -746,13 +749,15 @@
                                 {
                                     ?>
                                     <li><a id="logout" onclick="logout();"><?php echo translate("Logout"); ?></a></li>
-                                <?php } ?>
-
+                                    <?php
+                                }
+                                ?>
                             </ul>
                         </li>
-                        <li id="inbox_icon" class="" style="padding: 0px"><a class="inbox_icon" href="<?php echo base_url(); ?>message/inbox"><img src="<?php echo base_url(); ?>/images/messageicon.fw.png" /></a></li>
-                <?php endif; ?>
-                <?php
+                        <li id="inbox_icon" class=""><a class="inbox_icon" href="<?php echo base_url(); ?>message/inbox"><img src="<?php echo base_url(); ?>/images/messageicon.fw.png" /></a></li>
+                        <?php
+                    }
+       
                     $segment = $this->uri->segment(2);
                     if ($segment == 'help')
                     {
@@ -762,108 +767,83 @@
                                 $('#view_help').hide();
                             })
                         </script>	
-                    <?php }
-                ?>
-                <?php
-                    $u_agent = $_SERVER['HTTP_USER_AGENT'];
-                    if (preg_match('/MSIE/i', $u_agent))
-                    {
-                        echo "<li id='view_help' style='float:left;width:85px;padding:0px;' class='hidden-xs'>";
-                    }
-                    else
-                    {
-                        echo "<div id='view_help' class='hidden-xs'>";
+                        <?php
                     }
                 ?>
-
-                <ul id="navigation">
-                    <li id="subnavigation">
-                        <ul class="menu_help">
-                            <?php
-                                $segment = $this->uri->segment(2);
-                                if ($segment == 'help')
-                                {
-                                    
-                                }
-                                else
-                                {
-                                    ?>
-                                    <li class="hel_in"><a href="#"><?php echo translate("Help") ?> 
-                                            <span>
-                                                <img class="hel_downarrow" src="<?php echo base_url(); ?>/images/down_arrow.png" />
-                                            </span>
-                                        </a>
-
-                                    <?php } ?>
-                                <ul>
-                                    <?php
-                                        $static_que = $this->db->where('page_refer', 'guide')->where('status', 0)->from('help')->get();
-                                        if ($static_que->num_rows() != 0)
-                                        {
-                                            foreach ($static_que->result() as $row_status)
-                                            {
-                                                $row_status->id;
-                                                ?>
-                                                <li class="guide"><a href="<?php echo base_url() . 'home/help/' . $row_status->id; ?>"><?php echo $row_status->question . '</a>'; ?></li>
-                                                <?php
-                                            }
+                <li id='view_help'>
+                    <ul id="navigation">
+                        <li id="subnavigation" class='hidden-xs'>
+                            <ul class="menu_help">
+                                <?php
+                                    $segment = $this->uri->segment(2);
+                                    if ($segment != 'help')
+                                    {
+                                        ?>
+                                        <li class="hel_in"><a href="#"><?php echo translate("Help") ?> 
+                                                <span>
+                                                    <img class="hel_downarrow" src="<?php echo base_url(); ?>/images/down_arrow.png" />
+                                                </span>
+                                            </a>
+                                            <?php
                                         }
                                     ?>
-                                    <?php
-                                        $id_segment = $this->uri->segment(1);
-                                        $segment = $this->uri->segment(2);
-                                        if (!$id_segment)
-                                        {
-                                            $sql = $this->db->where('id', '1')->get('help');
-                                            if ($sql->num_rows() == 0)
+                                    <ul>
+                                        <?php
+                                            $static_que = $this->db->where('page_refer', 'guide')->where('status', 0)->from('help')->get();
+                                            if ($static_que->num_rows() != 0)
                                             {
-                                                
+                                                foreach ($static_que->result() as $row_status)
+                                                {
+                                                    $row_status->id;
+                                                    ?>
+                                                    <li class="guide"><a href="<?php echo base_url() . 'home/help/' . $row_status->id; ?>"><?php echo $row_status->question . '</a>'; ?></li>
+                                                    <?php
+                                                }
                                             }
-                                        }
-                                        else
-                                        {
-
-                                            if ($id_segment && !$segment)
+                                        
+                                            $id_segment = $this->uri->segment(1);
+                                            $segment = $this->uri->segment(2);
+                                            if (!$id_segment)
                                             {
-                                                $sql = $this->db->where('page_refer', $id_segment)->get('help');
+                                                $sql = $this->db->where('id', '1')->get('help');
+                                                if ($sql->num_rows() == 0)
+                                                {
+                                                    
+                                                }
                                             }
                                             else
                                             {
-                                                $id_segment = $this->uri->segment(2, 0);
-                                                $sql = $this->db->where('page_refer', $id_segment)->get('help');
+
+                                                if ($id_segment && !$segment)
+                                                {
+                                                    $sql = $this->db->where('page_refer', $id_segment)->get('help');
+                                                }
+                                                else
+                                                {
+                                                    $id_segment = $this->uri->segment(2, 0);
+                                                    $sql = $this->db->where('page_refer', $id_segment)->get('help');
+                                                }
                                             }
-                                        }
 
-                                        foreach ($sql->result() as $row)
-                                        {
-                                            $my_id = $row->id;
-                                            $segment = $row->page_refer;
-                                            $stat = $row->status;
-                                            if ($stat != 1)
+                                            foreach ($sql->result() as $row)
                                             {
-                                                ?>
-                                                    <?php echo '<li class="pop_help">'; ?><a href="<?php echo base_url() . 'home/help/' . $row->id; ?>"> <?php echo "$row->question"; ?> <?php } ?></a>
+                                                $my_id = $row->id;
+                                                $segment = $row->page_refer;
+                                                $stat = $row->status;
+                                                if ($stat != 1)
+                                                {
+                                                 echo '<li class="pop_help">'; ?><a href="<?php echo base_url() . 'home/help/' . $row->id; ?>"> <?php echo "$row->question"; ?> <?php } ?></a>
 
-
-                                            <?php
-                                            echo'</li>';
-                                        }
-                                    ?>
-                            </li>
-                        </ul>
-                    </li>
-                </ul>
+                                                <?php
+                                                echo'</li>';
+                                            }
+                                        ?>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
                 <?php
-                    $u_agent = $_SERVER['HTTP_USER_AGENT'];
-                    if (preg_match('/MSIE/i', $u_agent))
-                    {
-
-                        echo '</li>';
-                    }
-                    else
-                    {
-                        echo '</div>';
-                    }
                     if ($this->uri->segment(1) == 'new' || $this->uri->segment(2) == 'lys_next')
                     {
                         
@@ -871,12 +851,12 @@
                     else
                     {
                         ?>
-                        <li style="margin-top: 12px; float:left; margin-right: 20px;padding:0;line-height:normal;"> <a class="yellow btn" href="<?php echo site_url('rooms/new'); ?>"><span><?php echo translate('List Your Space'); ?></span></a> </li>
-                                    <?php
-                                }
-                            ?>
-                </ul>
-                </li>
+                        <li> <a class="yellow btn" href="<?php echo site_url('rooms/new'); ?>"><span><?php echo translate('List Your Space'); ?></span></a> </li>
+                        <?php
+                    }
+                ?>
+<!--                </ul>
+                </li>-->
                 </ul>
             </div>					
         </div>

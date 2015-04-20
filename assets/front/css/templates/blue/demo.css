@@ -105,7 +105,7 @@ a.cta{font-size:16px;padding-left:13px;position:relative;top:3px}
 .menu ul li a:hover>.icon-popular{background:url(images/hover_heart_icon.png) no-repeat}
 .menu ul li a:hover>.icon-friends{background:url(images/hover_friend_icon.png) no-repeat}
 .menu ul li a:hover>.icon-neighborhoods{background:url(images/hover_neighborhood_icon.png) no-repeat}
-#view_help>ul{margin-left:-6px;display:flex}
+/*#view_help>ul{margin-left:-6px;display:flex}*/
 .Box_dash{background:-moz-linear-gradient(center top,#FFFFFF 0%,#F9F9F9 50%,#F2F2F2 50.1%,#F0F0F0 100%) repeat scroll 0 0 transparent;background:-webkit-linear-gradient(top,#FFFFFF 0%,#F9F9F9 50%,#F2F2F2 50.1%,#F0F0F0 100%) repeat scroll 0 0 transparent;border:1px solid #d0d0d0;border-radius:4px;box-shadow:0 0 10px 2px #fff inset,0 0 0 #000;padding:10px 15px}
 .Box_dash>h2{font-size:18px;line-height:1.5;margin:3px 0;text-align:center}
 .invite_now_green{background-color:#05ab01;background-image:-moz-linear-gradient(center top,#08ce03 0%,#05ab01 100%);background-image:-webkit-linear-gradient(top,#08ce03 0%,#05ab01 100%);border-color:#05b501 #059402 #048201;border-image:none;border-radius:5px;border-style:solid;border-width:1px;color:#fff;display:inline-block;font-size:15px;font-weight:700;line-height:normal;padding:.6em 1.3em;text-transform:uppercase}
